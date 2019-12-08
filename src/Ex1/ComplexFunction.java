@@ -4,7 +4,7 @@ public class ComplexFunction implements complex_function {
 function left;
 function right;
 Operation P;
-public public ComplexFunction() {
+ public ComplexFunction() {
 	// TODO Auto-generated constructor stub
 	this.left=new Polynom("0");
 	this.left=new Polynom("0");
