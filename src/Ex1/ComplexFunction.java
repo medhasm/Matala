@@ -1,23 +1,47 @@
 package Ex1;
-123
 
-import com.sun.corba.se.spi.orb.Operation;
+import javax.management.RuntimeErrorException;
+
+//import com.sun.corba.se.spi.orb.Operation;
 
 public class ComplexFunction implements complex_function {
-function left;
-function right;
-Operation P;
+private function left;
+private function right;
+private Operation P;
+
  public ComplexFunction() {
 	// TODO Auto-generated constructor stub
-	this.right=null;
+	this.right=new Polynom("0");
 	this.left=null;
 	this.P=Operation.None;
-
+	
 }
- public ComplexFunction(Operation P,function f1,function f2) {
-this.P=P;
-this.left=f1;
-this.right=f2;
+ public ComplexFunction(Operation OP,function f1,function f2) {
+	switch (OP) {
+	case Plus:
+		P=P.Plus;
+		break;
+	case Times:
+		P=P.Times;
+		break;
+	case Divid:
+		P=P.Divid;
+		break;
+	case Max:
+		P=P.Max;
+		break;
+	case Min:
+		P=P.Min;
+		break;
+	case Comp:
+		P=P.Comp;
+		break;
+	case None:
+		throw new RuntimeErrorException(null, "ERR: operation can't be None");
+	default:
+		
+		break;
+	}
  }
 	@Override
 	public double f(double x) {
@@ -26,25 +50,26 @@ this.right=f2;
 		
 		switch (this.P) {
 		case Plus:
-			
-	  return this.left.f(x)+this.right.f(x);		
-
+			return left.f(x)+right.f(x);		
 		case Times:
-			return this.left.f(x)*this.right.f(x);
+			return left.f(x)*right.f(x);
 		case Divid:
-			if(this.right.f(x)==0) {
-				// throw exception
+			try {
+			     return left.f(x)/right.f(x);
 			}
-			return this.left.f(x)/this.right.f(x);
+			catch (Exception e)
+			{
+				System.out.println("ER: f2(x) =0");
+			}
 		case Max:
-			
-			if(this.left.f(x)>=this.right.f(x)) return this.left.f(x);
-			else return this.right.f(x);
+			if(left.f(x)>=right.f(x)) return left.f(x);
+			else return right.f(x);
 		case Min:	
-			if(this.left.f(x)<=this.right.f(x)) return this.left.f(x);
-			else return this.right.f(x);
+			if(left.f(x)<=right.f(x)) return left.f(x);
+			else return right.f(x);
+		case Comp:
+			return left.f(right.f(x));
 		}
-		
 		return 0;
 	}
 
