@@ -6,13 +6,19 @@ function right;
 Operation P;
  public ComplexFunction() {
 	// TODO Auto-generated constructor stub
-	this.left=new Polynom("0");
-	this.left=new Polynom("0");
+	this.right=null;
+	this.left=null;
 
 }
+ public ComplexFunction(Operation P,function f1,function f2) {
+this.P=P;
+this.left=f1;
+this.right=f2;
+ }
 	@Override
 	public double f(double x) {
 		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
@@ -31,19 +37,39 @@ Operation P;
 	@Override
 	public void plus(function f1) {
 		// TODO Auto-generated method stub
-		
+		if (f1==null) {
+			return ;
+		}
+		this.left=new ComplexFunction(this.P,this.left,this.right);
+		this.right=f1;
+		this.P=P.Plus;
 	}
 
 	@Override
 	public void mul(function f1) {
 		// TODO Auto-generated method stub
+		if (f1==null) {
+			return ;
+		}
+		this.left=new ComplexFunction(this.P,this.left,this.right);
+		this.right=f1;
+		this.P=P.Times;
 		
 	}
+	
 
 	@Override
 	public void div(function f1) {
 		// TODO Auto-generated method stub
+		if (f1==null) {
+			return ;
+		}
+		this.left=new ComplexFunction(this.P,this.left,this.right);
+		this.right=f1;
+		this.P=P.Divid;
 		
+	
+	
 	}
 
 	@Override
@@ -79,7 +105,7 @@ Operation P;
 	@Override
 	public Operation getOp() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.P;
 	}
 
 	/**
