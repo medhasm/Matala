@@ -45,6 +45,35 @@ private Operation P;
 	left=f1;
 	right=f2;
  }
+ public ComplexFunction(String s,function f1,function f2) {
+		switch (s) {
+		case "Plus":
+			P=P.Plus;
+			break;
+		case "Times":
+			P=P.Times;
+			break;
+		case "Divid":
+			P=P.Divid;
+			break;
+		case "Max":
+			P=P.Max;
+			break;
+		case "Min":
+			P=P.Min;
+			break;
+		case "Comp":
+			P=P.Comp;
+			break;
+		case "None":
+			throw new RuntimeErrorException(null, "ERR: operation can't be None");
+		default:
+			throw new RuntimeException("ERR:  you entered iligal Operatin. got"+OP);
+			
+		}
+		left=f1;
+		right=f2;
+	 }
 	@Override
 	public double f(double x) {
 		// TODO Auto-generated method stub
