@@ -1,4 +1,7 @@
 package Ex1;
+123
+
+import com.sun.corba.se.spi.orb.Operation;
 
 public class ComplexFunction implements complex_function {
 function left;
@@ -8,6 +11,7 @@ Operation P;
 	// TODO Auto-generated constructor stub
 	this.right=null;
 	this.left=null;
+	this.P=Operation.None;
 
 }
  public ComplexFunction(Operation P,function f1,function f2) {
