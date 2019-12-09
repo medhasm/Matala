@@ -39,9 +39,11 @@ private Operation P;
 	case None:
 		throw new RuntimeErrorException(null, "ERR: operation can't be None");
 	default:
+		throw new RuntimeException("ERR:  you entered iligal Operatin. got"+OP);
 		
-		break;
 	}
+	left=f1;
+	right=f2;
  }
 	@Override
 	public double f(double x) {
