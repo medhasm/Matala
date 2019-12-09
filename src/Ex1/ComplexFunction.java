@@ -23,39 +23,24 @@ this.right=f2;
 		switch (this.P) {
 		case Plus:
 			
-			if (this.left instanceof Polynom || this.left instanceof Polynom_able) {
-				if(this.right instanceof Monom) {
-					
-					Polynom_able PO=(Polynom_able) this.left;
-					Monom m= (Monom) this.right;
-					PO.add(m);
-					
-				}
-	if(this.right instanceof Polynom || this.right instanceof Polynom_able) {
-					
-					Polynom_able PO=(Polynom_able) this.left;
-					Polynom_able m= (Polynom_able) this.right;
-					PO.add(m);
-					
-				}
-			}
-			if(this.left instanceof Monom) {
-				if (this.right instanceof Polynom || this.right instanceof Polynom_able) {
-					Polynom_able PO=(Polynom_able) this.right;
-					Monom m= (Monom) this.left;
-					PO.add(m);
-				}
-				if(this.right instanceof Monom) {
-					Monom m=(Monom) this.left;
-					Monom n=(Monom) this.right;
-					m.add(n);
-				}
-			}
-			break;
+	  return this.left.f(x)+this.right.f(x);		
 
-		default:
-			break;
+		case Times:
+			return this.left.f(x)*this.right.f(x);
+		case Divid:
+			if(this.right.f(x)==0) {
+				// throw exception
+			}
+			return this.left.f(x)/this.right.f(x);
+		case Max:
+			
+			if(this.left.f(x)>=this.right.f(x)) return this.left.f(x);
+			else return this.right.f(x);
+		case Min:	
+			if(this.left.f(x)<=this.right.f(x)) return this.left.f(x);
+			else return this.right.f(x);
 		}
+		
 		return 0;
 	}
 
