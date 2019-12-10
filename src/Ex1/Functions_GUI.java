@@ -1,19 +1,20 @@
 package Ex1;
 import java.awt.Color;
-import java.awt.Font;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Iterator;
+import java.io.InputStream;
 
 public class Functions_GUI implements functions {
 	
@@ -34,7 +35,7 @@ public class Functions_GUI implements functions {
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+		func.clear();
 	}
 
 	@Override
@@ -51,7 +52,8 @@ public class Functions_GUI implements functions {
 	public boolean containsAll(Collection<?> arg0) {
 		// TODO Auto-generated method stub
 		
-		return false;
+		return func.containsAll(arg0);
+		
 	}
 
 	@Override
@@ -78,39 +80,45 @@ public class Functions_GUI implements functions {
 	@Override
 	public boolean removeAll(Collection<?> arg0) {
 		// TODO Auto-generated method stub
-		return false;
+		
+		return func.removeAll(arg0);
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> arg0) {
 		// TODO Auto-generated method stub
-		return false;
+		return func.retainAll(arg0);
 	}
 
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return 0;
+		return func.size();
 	}
 
 	@Override
 	public Object[] toArray() {
 		// TODO Auto-generated method stub
-		return null;
+		return func.toArray();
 	}
 
 	@Override
 	public <T> T[] toArray(T[] arg0) {
 		// TODO Auto-generated method stub
-		return null;
+		return func.toArray(arg0);
 	}
 
 	@Override
 	public void initFromFile(String file) throws IOException {
 		// TODO Auto-generated method stub
-		
+		//InputStream fis = new FileInputStream(file);
+		///JsonReader jsonReader = Json.createReader(fis);
+		FileReader file_reader=new FileReader(file);
+		BufferedReader br = new BufferedReader(file_reader);
+		String st; 
+		  while ((st = br.readLine()) != null) 
+		    System.out.println(st); 
 	}
-
 	@Override
 	public void saveToFile(String file) throws IOException {
 		// TODO Auto-generated method stub
@@ -125,15 +133,10 @@ public class Functions_GUI implements functions {
 
 	@Override
 	public void drawFunctions(String json_file) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
-
-	public ComplexFunction get(int i) {
+	public function get(int i) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.func.get(i);
 	}
-
-	
-
 }
