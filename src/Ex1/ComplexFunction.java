@@ -8,11 +8,17 @@ private Operation P;
 
  public ComplexFunction() {
 	// TODO Auto-generated constructor stub
-	this.right=null;
+	this.right=new Polynom("0");
 	this.left=new Polynom("0");
 	this.P=Operation.None;
 	
 }
+ public ComplexFunction(function f1)
+ {
+	 this.left=f1;
+	 this.right=new Polynom("0");
+	 this.P=Operation.None;
+ }
  public ComplexFunction(Operation OP,function f1,function f2) {
 	switch (OP) {
 	case Plus:
@@ -34,13 +40,13 @@ private Operation P;
 		P=P.Comp;
 		break;
 	case None:
-		throw new RuntimeException( "ERR: operation can't be None"+null);
+		throw new RuntimeException( "ERR: operation can't be None");
 	default:
 		throw new RuntimeException("ERR:  you entered iligal Operatin. got"+OP);
 		
 	}
-	left=f1;
-	right=f2;
+	this.left=f1;
+	this.right=f2;
  }
  public ComplexFunction(String s,function f1,function f2) {
 		switch (s) {
@@ -112,7 +118,7 @@ private Operation P;
 	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
-		
+		s=s.replace(" ", "");
 		int git;
 		ComplexFunction cf=new ComplexFunction();
 		
@@ -125,15 +131,11 @@ private Operation P;
 				f2=cf.initFromString(s.substring(git+1 ,s.length()));
 				if(s.equals(",(")||s.equals("),")) {
 					if(s.equals(",(")) {
-						throw new RuntimeException("Err:left function cant be null"); 
-							
+						throw new RuntimeException("Err:left function cant be null"); 			
 						}else {
 							f2=new Polynom("0");
-					
 					}
-					
 				}
-				
 				 cf=new ComplexFunction(s.substring(0, s.indexOf('(')),f1,f2);
 			}
 		
@@ -170,16 +172,17 @@ private Operation P;
 		// TODO Auto-generated method stub
 		if(f1.toString().equals("1.0"))
 			return ;
-		if(left.toString().equals("0")&&P.toString().equals("None"))
-			left=new ComplexFunction(f1.toString());
+		if(this.left.toString().equals("0")&&this.P.toString().equals("None"))
+			this.left=new ComplexFunction(f1.toString());
 		else
-		if(right.toString().equals("0.0")&&P.toString().equals("None")){
-				right=f1;
+
+			if(this.right.toString().equals("0.0")&&this.P.toString().equals("None")){
+				this.right=f1;
 		}
 		else {
-			ComplexFunction cf=new ComplexFunction(this.P,left, right);
-			left=cf;
-			right=f1;
+			ComplexFunction cf=new ComplexFunction(this.P,this.left,this.right);
+			this.left=cf;
+			this.right=f1;
 			}
 		P=Operation.Times;
 	}
@@ -258,7 +261,7 @@ private Operation P;
 	}
 	public String tostring()
 	{
-		return P.toString()+"("+left.toString()+","+right.toString()+")";
+		return "2";//P.toString()+"("+left.toString()+","+right.toString()+")";
 	}
 	/**
 	 * 
@@ -277,7 +280,8 @@ private Operation P;
 				}
 			}
 		
+		}
+		return 0;
 	}
-return 0;
+	
 }
-	}
