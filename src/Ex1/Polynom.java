@@ -385,7 +385,7 @@ this.poly2.add(new Monom("0"));
 	@Override
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
-		return null;
+		return new Polynom(s);
 	}
 	
 }
