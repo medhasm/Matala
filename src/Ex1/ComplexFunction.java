@@ -172,11 +172,10 @@ private Operation P;
 		// TODO Auto-generated method stub
 		if(f1.toString().equals("1.0"))
 			return ;
-		if(this.left.toString().equals("0")&&this.P.toString().equals("None"))
+		if(this.left.toString().equals("0.0")&&this.P.toString().equals("None"))
 			this.left=new ComplexFunction(f1.toString());
 		else
-
-			if(this.right.toString().equals("0.0")&&this.P.toString().equals("None")){
+			if(this.right.toString().equals("null")&&this.P.toString().equals("None")){
 				this.right=f1;
 		}
 		else {
@@ -261,7 +260,7 @@ private Operation P;
 	}
 	public String tostring()
 	{
-		return "2";//P.toString()+"("+left.toString()+","+right.toString()+")";
+		return "("+left.toString()+","+right.toString()+")";
 	}
 	/**
 	 * 
