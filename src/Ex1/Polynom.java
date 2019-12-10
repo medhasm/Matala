@@ -36,7 +36,7 @@ this.poly2.add(new Monom("0"));
 	 * @param s: is a string represents a Polynom
 	 */
 	public Polynom(String s) {
-		
+		s=s.replace(" ", "");
 	
 		List<Character> c= new ArrayList<Character>();
 	for (int i = 0; i <s.length() ; i++){
