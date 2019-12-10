@@ -8,8 +8,8 @@ private Operation P;
 
  public ComplexFunction() {
 	// TODO Auto-generated constructor stub
-	this.right=new Polynom("0");
-	this.left=null;
+	this.right=null;
+	this.left=new Polynom("0");
 	this.P=Operation.None;
 	
 }
@@ -63,9 +63,9 @@ private Operation P;
 			P=P.Comp;
 			break;
 		case "None":
-			throw new RuntimeErrorException(null, "ERR: operation can't be None");
+			throw new RuntimeException( "ERR: operation can't be None");
 		default:
-			throw new RuntimeException("ERR:  you entered iligal Operatin. got"+OP);
+			throw new RuntimeException("ERR:  you entered iligal Operatin got");
 			
 		}
 		left=f1;
@@ -97,14 +97,45 @@ private Operation P;
 			else return right.f(x);
 		case Comp:
 			return left.f(right.f(x));
+		case None:
+			if(right==null) return left.f(x);
+		case Error:
+			throw new RuntimeException("ERR:  you entered iligal Operatin got");
+		default:
+			throw new RuntimeException("ERR:  you entered iligal Operatin got");
 		}
-		return 0;
+		
 	}
 
 	@Override
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		int git;
+		ComplexFunction cf=new ComplexFunction();
+		
+		function f1,f2;
+	
+		char c=',';
+			if(s.contains(",")) {
+				git=this.GIO(s);
+				f1=cf.initFromString(s.substring(s.indexOf('(')+1, git));
+				f2=cf.initFromString(s.substring(git+1 ,s.length()));
+				if(s.equals(",(")||s.equals("),")) {
+					if(s.equals(",(")) {
+						throw new RuntimeException("Err:left function cant be null"); 
+							
+						}else {
+							f2=new Polynom("0");
+					
+					}
+					
+				}
+				
+				 cf=new ComplexFunction(s.substring(0, s.indexOf('(')),f1,f2);
+			}
+		
+		return cf;
 	}
 
 	@Override
@@ -195,7 +226,7 @@ private Operation P;
 	public function left() {
 		// TODO Auto-generated method stub
 		if(this.left==null) {
-			throw new RuntimeException("ERR the left function can't be nuull : "+this.left);
+			throw new RuntimeException("ERR the left function can't be null : "+this.left);
 		}
 		return this.left;
 	}
@@ -215,6 +246,21 @@ private Operation P;
 	/**
 	 * 
 	 */
-	
-
+	private int GIO(String s) { // get the index of the char ',' that is in the middle of the complex function
+		int c1 = 0, c2=0;
+		for(int i=0;i<=s.length()-1;i++) {
+			if (s.charAt(i)=='('||s.charAt(i)==')') {
+				if(s.charAt(i)=='(') c1+=1;
+				else c2+=1;
+				
+			}
+			if(s.charAt(i)==',') {
+				if((c1-1)==c2) {
+					return i;
+				}
+			}
+		
+	}
+return 0;
 }
+	}
