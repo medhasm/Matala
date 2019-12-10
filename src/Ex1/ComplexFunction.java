@@ -65,8 +65,7 @@ private Operation P;
 		case "None":
 			throw new RuntimeException( "ERR: operation can't be None");
 		default:
-			throw new RuntimeException("ERR:  you entered iligal Operatin got");
-			
+			throw new RuntimeException("ERR:  you entered iligal Operatin got");	
 		}
 		left=f1;
 		right=f2;
@@ -74,8 +73,6 @@ private Operation P;
 	@Override
 	public double f(double x) {
 		// TODO Auto-generated method stub
-		
-		
 		switch (this.P) {
 		case Plus:
 			return left.f(x)+right.f(x);		
@@ -103,11 +100,16 @@ private Operation P;
 			throw new RuntimeException("ERR:  you entered iligal Operatin got");
 		default:
 			throw new RuntimeException("ERR:  you entered iligal Operatin got");
-		}
-		
+		}	
 	}
-
-	@Override
+	public ComplexFunction(String s)
+	{
+		ComplexFunction cf =new ComplexFunction();
+		cf.initFromString(s);
+		left=cf.left;
+		right=cf.right;
+		P=cf.P;
+	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
 		
@@ -148,41 +150,59 @@ private Operation P;
 	@Override
 	public void plus(function f1) {
 		// TODO Auto-generated method stub
-		if (f1==null) {
+		if(f1.toString().equals("0.0"))
 			return ;
+		if(left.toString().equals("0")&&P.toString().equals("None"))
+			left=new ComplexFunction(f1.toString());
+		else
+		if(right.toString().equals("0.0")&&P.toString().equals("None")){
+				right=f1;
 		}
-		this.left=new ComplexFunction(this.P,this.left,this.right);
-		this.right=f1;
-		this.P=P.Plus;
+		else {
+			ComplexFunction cf=new ComplexFunction(this.P,left, right);
+			left=cf;
+			right=f1;
+			}
+		P=Operation.Plus;
 	}
-
 	@Override
 	public void mul(function f1) {
 		// TODO Auto-generated method stub
-		if (f1==null) {
+		if(f1.toString().equals("1.0"))
 			return ;
+		if(left.toString().equals("0")&&P.toString().equals("None"))
+			left=new ComplexFunction(f1.toString());
+		else
+		if(right.toString().equals("0.0")&&P.toString().equals("None")){
+				right=f1;
 		}
-		this.left=new ComplexFunction(this.P,this.left,this.right);
-		this.right=f1;
-		this.P=P.Times;
-		
+		else {
+			ComplexFunction cf=new ComplexFunction(this.P,left, right);
+			left=cf;
+			right=f1;
+			}
+		P=Operation.Times;
 	}
-	
-
 	@Override
 	public void div(function f1) {
 		// TODO Auto-generated method stub
-		if (f1==null) {
+		if(f1.toString().equals("0.0"))
+			throw new RuntimeException("ERR: YOU CAN'T DIVID BY ZERO!!");
+		if(f1.toString().equals("1.0"))
 			return ;
+		if(left.toString().equals("0")&&P.toString().equals("None"))
+			left=new ComplexFunction(f1.toString());
+		else
+			if(right.toString().equals("0.0")&&P.toString().equals("None")){
+				right=f1;
 		}
-		this.left=new ComplexFunction(this.P,this.left,this.right);
-		this.right=f1;
-		this.P=P.Divid;
-		
-	
-	
+		else {
+			ComplexFunction cf=new ComplexFunction(this.P,left, right);
+			left=cf;
+			right=f1;
+			}
+		P=Operation.Divid;
 	}
-
 	@Override
 	public void max(function f1) {
 		// TODO Auto-generated method stub
@@ -192,11 +212,7 @@ private Operation P;
 		this.left=new ComplexFunction(this.P,this.left,this.right);
 		this.right=f1;
 		this.P=P.Max;
-		
 	}
-	
-	
-
 	@Override
 	public void min(function f1) {
 		// TODO Auto-generated method stub
@@ -206,9 +222,7 @@ private Operation P;
 		this.left=new ComplexFunction(this.P,this.left,this.right);
 		this.right=f1;
 		this.P=P.Min;
-	
 	}
-
 	@Override
 	public void comp(function f1) {
 		// TODO Auto-generated method stub
@@ -242,7 +256,10 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return this.P;
 	}
-
+	public String tostring()
+	{
+		return P.toString()+"("+left.toString()+","+right.toString()+")";
+	}
 	/**
 	 * 
 	 */
