@@ -24,7 +24,7 @@ import Ex1.function;
  */
 class Functions_GUITest {
 	public static void main(String[] a) {
-		Functions_GUI data = FunctionsFactory();
+	Functions_GUI data = FunctionsFactory();
 		int w=1000, h=600, res=200;
 		Range rx = new Range(-10,10);
 		Range ry = new Range(-5,15);
@@ -37,7 +37,7 @@ class Functions_GUITest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		_data = FunctionsFactory();
+	//	_data = FunctionsFactory();
 	}
 
 	//@Test

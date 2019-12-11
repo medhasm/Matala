@@ -48,43 +48,50 @@ private Operation P;
 	this.left=f1;
 	this.right=f2;
  }
- private Operation fix_op(String s)
+/** private Operation fix_op(String s)
  {
 	 switch (s) {
 	 case "plus":
 		 return Operation.Plus;
-		 break;
-
-	 case "times":
+	case "times":
 		 return Operation.Times;
-		 break;
-
-	 case "divid":
+	case "div":
+		return Operation.Divid;
+	case "divid":
 		 return Operation.Divid;
-		 break;
-
-	 case "none":
+	case "none":
 	 	return Operation.None;
-		 break;
-
-	 case "min":
+	case "min":
 		 return Operation.Min;
-		 break;
-	 case "max":
+	case "max":
 		 return Operation.Max;
-		 break;
-	 case "comp": 
+	case "comp": 
 		 return Operation.Comp;
-		 break;
-	 case "error":
-		 return Operation.Error;
-		 break;
-		 
+	case "error":
+		 return Operation.Error; 
+	 }
+	 switch (s) {
+		case "Plus":
+			return Operation.Plus;
+	case "Times":
+			return Operation.Times;
+	case "Divid":
+			return Operation.Divid;
+	case "Max":
+			return Operation.Max;
+	case "Min":
+			return Operation.Min;
+	case "Comp":
+			return Operation.Comp;
+	case "None":
+			return Operation.None;
+	 }
 
- }
+ }*/
  public ComplexFunction(String s,function f1,function f2)
  {
-	 	
+	 //	String a=fix_op(s);
+
 		switch (s) {
 		case "Plus":
 			P=Operation.Plus;
@@ -186,9 +193,28 @@ private Operation P;
 	@Override
 	public void plus(function f1) {
 		// TODO Auto-generated method stub
+		if(this.P==Operation.None) {
+			
+			
+		if(this.left.toString().equals("0.0")) {
+			this.left=f1;
+		this.P=Operation.Plus;
+	}
+		else
+			if(this.right.toString().equals("0.0")){
+				this.right=f1;
+				this.P=Operation.Plus;
+		}
+		}else {
+			ComplexFunction cf=new ComplexFunction(this.P,this.left,this.right);
+			this.left=cf;
+			this.right=f1;
+			this.P=Operation.Plus;
+			}
+	/*
 		if(f1.toString().equals("0.0"))
 			return ;
-		if(left.toString().equals("0")&&P.toString().equals("None"))
+		if(left.toString().equals("0.0")&&P.toString().equals("None"))
 			left=new ComplexFunction(f1.toString());
 		else
 		if(right.toString().equals("0.0")&&P.toString().equals("None")){
@@ -200,6 +226,7 @@ private Operation P;
 			right=f1;
 			}
 		P=Operation.Plus;
+		*/
 	}
 	@Override
 	public void mul(function f1) {
@@ -213,16 +240,25 @@ private Operation P;
 		this.P=Operation.Times;
 		}
 		else
+
 			if(right==null){
 				right=f1;
 				P=Operation.Times;
-		}
+			}
+			if(this.right.toString().equals("0.0")){
+				this.right=f1;
+				this.P=Operation.Times;
+			}
+
+		
 		}else {
 			ComplexFunction cf=new ComplexFunction(this.P,this.left,this.right);
 			this.left=cf;
 			this.right=f1;
 			this.P=Operation.Times;
 			}
+		
+	
 	
 	}
 	
@@ -233,18 +269,19 @@ private Operation P;
 			throw new RuntimeException("ERR: YOU CAN'T DIVID BY ZERO!!");
 		if(f1.toString().equals("1.0"))
 			return ;
-		if(left.toString().equals("0")&&P.toString().equals("None"))
-			left=new ComplexFunction(f1.toString());
-		else
+		
+		
 			if(right.toString().equals("0.0")&&P.toString().equals("None")){
 				right=f1;
+				this.P=Operation.Divid;
 		}
 		else {
 			ComplexFunction cf=new ComplexFunction(this.P,left, right);
 			left=cf;
 			right=f1;
+			P=Operation.Divid;
 			}
-		P=Operation.Divid;
+		
 	}
 	@Override
 	public void max(function f1) {
@@ -252,25 +289,54 @@ private Operation P;
 		if (f1==null) {
 			return ;
 		}
-		this.left=new ComplexFunction(this.P,this.left,this.right);
-		this.right=f1;
-		this.P=P.Max;
-	}
+		if(this.P==Operation.None) {
+		
+			
+				if(this.right.toString().equals("0.0")){
+					this.right=f1;
+					this.P=Operation.Max;
+			}
+		}
+				else {
+				ComplexFunction cf=new ComplexFunction(this.P,left, right);
+				left=cf;
+				right=f1;
+				P=Operation.Max;
+				}	
+				
+		}
+		
+
+	
 	@Override
 	public void min(function f1) {
 		// TODO Auto-generated method stub
 		if (f1==null) {
 			return ;
 		}
-		this.left=new ComplexFunction(this.P,this.left,this.right);
-		this.right=f1;
-		this.P=P.Min;
+		if(this.P==Operation.None) {
+			
+			
+			if(this.right.toString().equals("0.0")){
+				this.right=f1;
+				this.P=Operation.Min;
+		}
+	}
+			else {
+			ComplexFunction cf=new ComplexFunction(this.P,left, right);
+			left=cf;
+			right=f1;
+			P=Operation.Min;
+			}	
 	}
 	@Override
 	public void comp(function f1) {
 		// TODO Auto-generated method stub
 		if (f1==null) {
 			return ;
+		}
+		if(this.P==Operation.None) {
+			throw new RuntimeException("ERR: cant comp to None Operation ");
 		}
 		this.left=new ComplexFunction(this.P,this.left,this.right);
 		this.right=f1;
