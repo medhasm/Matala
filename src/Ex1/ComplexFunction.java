@@ -53,26 +53,38 @@ private Operation P;
 	 switch (s) {
 	 case "plus":
 		 return Operation.Plus;
+		 break;
+
 	 case "times":
 		 return Operation.Times;
+		 break;
+
 	 case "divid":
 		 return Operation.Divid;
+		 break;
+
 	 case "none":
 	 	return Operation.None;
+		 break;
+
 	 case "min":
 		 return Operation.Min;
+		 break;
 	 case "max":
 		 return Operation.Max;
+		 break;
 	 case "comp": 
 		 return Operation.Comp;
+		 break;
 	 case "error":
 		 return Operation.Error;
-	 
-	
+		 break;
+		 
+
  }
  public ComplexFunction(String s,function f1,function f2)
  {
-	 	s=fix_op(s);
+	 	
 		switch (s) {
 		case "Plus":
 			P=Operation.Plus;
