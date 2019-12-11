@@ -113,11 +113,17 @@ public class Functions_GUI implements functions {
 		// TODO Auto-generated method stub
 		//InputStream fis = new FileInputStream(file);
 		///JsonReader jsonReader = Json.createReader(fis);
+		try {
 		FileReader file_reader=new FileReader(file);
 		BufferedReader br = new BufferedReader(file_reader);
 		String st; 
+		ComplexFunction cf = new ComplexFunction();
 		  while ((st = br.readLine()) != null) 
 		    System.out.println(st); 
+		  func.add(cf.initFromString(st));
+	}catch(IOException e) {
+		e.printStackTrace();
+	}
 	}
 	@Override
 	public void saveToFile(String file) throws IOException {
