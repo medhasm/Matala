@@ -41,8 +41,11 @@ public class test {
 		System.out.println(c);*/
 		function f=new Polynom("2x");
 		System.out.println(f);
-		ComplexFunction cf=new ComplexFunction(f);
-		System.out.println(cf);
+		/**ComplexFunction f1=new ComplexFunction(f);
+		System.out.println(f1);*/
+		ComplexFunction cf=new ComplexFunction();
+		ComplexFunction f1=(ComplexFunction) cf.initFromString("Plus(2x,x)");
+		System.out.println(f1);
 				
 	}
 
