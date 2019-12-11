@@ -291,7 +291,6 @@ private Operation P;
 		}
 		if(this.P==Operation.None) {
 		
-			
 				if(this.right.toString().equals("0.0")){
 					this.right=f1;
 					this.P=Operation.Max;
