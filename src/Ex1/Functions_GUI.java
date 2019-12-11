@@ -153,6 +153,7 @@ public class Functions_GUI implements functions {
 		int size = func.size();
 		double[] x = new double[n+1];
 		double[][] yy = new double[size][n+1];
+		setGrid(rx, ry);
 		double x_step = (rx.get_max()-rx.get_min())/n;
 		double x0 = rx.get_min();
 		for (int i=0; i<=n; i++) {
@@ -164,8 +165,8 @@ public class Functions_GUI implements functions {
 		}
 		StdDraw.setXscale(rx.get_min(), rx.get_max());
 		StdDraw.setYscale(ry.get_min(), ry.get_max());
-		
-		
+		StdDraw.line(0,ry.get_min(), 0, ry.get_max());
+		StdDraw.line(rx.get_min(), 0, rx.get_max(), 0);
 		// plot the approximation to the function
 		for(int a=0;a<size;a++) {
 			int c = a%Colors.length;
@@ -177,7 +178,33 @@ public class Functions_GUI implements functions {
 			}
 		}
 	}
+	private void setGrid(Range rx, Range ry) {
+		for(double i = ry.get_max(); i>=ry.get_min(); i--) {
+			StdDraw.setPenColor(Color.gray);
+			StdDraw.setPenRadius(0.001);
+			if(i==0) {
+				StdDraw.setPenColor(Color.black);
+				StdDraw.setPenRadius(0.003);
+			}
+			StdDraw.line(rx.get_min(), i, rx.get_max(), i);
+			StdDraw.setPenColor(Color.black);
+			StdDraw.setPenRadius(0.005);
+			StdDraw.text(-0.3, i, (int)i+"");
+		}
+		for(double i = rx.get_max(); i>=rx.get_min(); i--) {
+			StdDraw.setPenColor(Color.gray);
+			StdDraw.setPenRadius(0.001);
+			if(i==0) {
+				StdDraw.setPenColor(Color.black);
+				StdDraw.setPenRadius(0.003);
+			}
+			StdDraw.line(i, ry.get_min(), i , ry.get_max());
+			StdDraw.setPenColor(Color.black);
+			StdDraw.setPenRadius(0.005);
+			StdDraw.text(i, -0.35, (int)i+"");
+		}
 
+	}
 	@Override
 	public void drawFunctions(String json_file) {
 		// TODO Auto-generated method stub	
