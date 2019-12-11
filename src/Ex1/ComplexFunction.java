@@ -125,7 +125,7 @@ private Operation P;
 			if(s.contains(",")) {
 				git=this.GIO(s);
 				f1=cf.initFromString(s.substring(s.indexOf('(')+1, git));
-				f2=cf.initFromString(s.substring(git+1 ,s.length()));
+				f2=cf.initFromString(s.substring(git+1 ,s.length()-1));
 				if(s.equals(",(")||s.equals("),")) {
 					if(s.equals(",(")) {
 						throw new RuntimeException("Err:left function cant be null"); 			
@@ -133,10 +133,11 @@ private Operation P;
 							f2=new Polynom("0");
 					}
 				}
-				 cf=new ComplexFunction(s.substring(0, s.indexOf('(')),f1,f2);
+				return cf=new ComplexFunction(s.substring(0, s.indexOf('(')),f1,f2);
 			}
+			
 		
-		return cf;
+		return new Polynom(s);
 	}
 	@Override
 	public function copy() {
@@ -254,11 +255,11 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return this.P;
 	}
-	@Override
+	/**@Override
 	public String toString()
 	{	
-		return P.toString()+"("+left.toString()+","+right.toString()+")";
-	}
+		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
+	}*/
 	/**
 	 * 
 	 */
@@ -279,5 +280,17 @@ private Operation P;
 		}
 		return 0;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
+		
+	}
+	@Override
+	public String tostring() {
+		// TODO Auto-generated method stub
+		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
+	}
+	
 	
 }
