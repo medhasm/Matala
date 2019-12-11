@@ -6,7 +6,7 @@ public class test {
 	
 		Functions_GUI data = FunctionsFactory();
 		Polynom P=new Polynom("3x^2+3");
-		data.add(P);
+	
 		int w=1000, h=600, res=200;
 		Range rx = new Range(-10,10);
 		Range ry = new Range(-5,15);
@@ -48,15 +48,17 @@ public class test {
 			ComplexFunction min = new ComplexFunction(ans.get(0).copy());
 			System.out.println("Max:"+max);
 			System.out.println( "Min:"+min);
+			System.out.println(ans.size());
 			for(int i=1;i<ans.size();i++) {
 				max.max(ans.get(i));
 				min.min(ans.get(i));
 				System.out.println("Interation "+i+ "-Max:"+max);
 				System.out.println( "Interation "+i+ "-Min:"+min);
 			}
+			
 			ans.add(max);
 			ans.add(min);
-			
+			System.out.println(ans.size());
 			return ans;
 		}
 	
