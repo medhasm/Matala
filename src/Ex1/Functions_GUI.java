@@ -1,5 +1,7 @@
 package Ex1;
 import java.awt.Color;
+
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -16,6 +18,13 @@ import java.util.Iterator;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+ 
+
+
 
 public class Functions_GUI implements functions {
 	
@@ -112,12 +121,10 @@ public class Functions_GUI implements functions {
 	@Override
 	public void initFromFile(String file) throws IOException {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
-=======
 		//InputStream fis = new FileInputStream(file);
 		///JsonReader jsonReader = Json.createReader(fis);
 		try {
->>>>>>> 0699dca8c8681187fc5bc5ac7e176d441c92b5ad
+
 		FileReader file_reader=new FileReader(file);
 		BufferedReader br = new BufferedReader(file_reader);
 		String st; 
@@ -125,9 +132,11 @@ public class Functions_GUI implements functions {
 		  while ((st = br.readLine()) != null) 
 		    System.out.println(st); 
 		  func.add(cf.initFromString(st));
-	}catch(IOException e) {
+		}
+		catch(IOException e) {
 		e.printStackTrace();
 	}
+		
 	}
 	@Override
 	public void saveToFile(String file) throws IOException {
@@ -180,6 +189,30 @@ public class Functions_GUI implements functions {
 	@Override
 	public void drawFunctions(String json_file) {
 		// TODO Auto-generated method stub	
+		JSONParser parser = new JSONParser();
+		 
+        try {
+ 
+            Object obj = parser.parse(new FileReader(
+                    "/Users/<username>/Documents/file1.txt"));
+ 
+            JSONObject jsonObject = (JSONObject) obj;
+ 
+            int Width = (int) jsonObject.get("Width");
+            int Height = (int) jsonObject.get("Height");
+            JSONArray  = (JSONArray) jsonObject.get("Company List");
+ 
+            System.out.println("Name: " + name);
+            System.out.println("Author: " + author);
+            System.out.println("\nCompany List:");
+            Iterator<String> iterator = companyList.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 	}
 	public function get(int i) {
 		// TODO Auto-generated method stub
@@ -187,4 +220,24 @@ public class Functions_GUI implements functions {
 	}
 	public static Color[] Colors = {Color.blue, Color.cyan,
 			Color.MAGENTA, Color.ORANGE, Color.red, Color.GREEN, Color.PINK};
+	public static void main(String[] args) {
+	    ComplexFunction cf1 = new ComplexFunction("Plus(-1.0x^4+2.4x^2+3.1,+0.1x^5-1.2999999999999998x+5.0)");
+        ComplexFunction cf2 = new ComplexFunction("plus(div(+1.0x +1.0,mul(mul(+1.0x +3.0,+1.0x -2.0),+1.0x -4.0)),2.0)");
+        ComplexFunction cf3 = new ComplexFunction("div(Plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),-1.0x^4 +2.4x^2 +3.1)");
+        ComplexFunction cf4 = new ComplexFunction("-1.0x^4 +2.4x^2 +3.1");
+        ComplexFunction cf5 = new ComplexFunction("max(max(max(max(plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),plus(div(+1.0x +1.0,mul(mul(+1.0x +3.0,+1.0x -2.0),+1.0x -4.0)),2.0)),div(plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),-1.0x^4 +2.4x^2 +3.1)),-1.0x^4 +2.4x^2 +3.1),+0.1x^5 -1.2999999999999998x +5.0)");
+        ComplexFunction cf6 = new ComplexFunction("min(min(min(min(plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),plus(div(+1.0x +1.0,mul(mul(+1.0x +3.0,+1.0x -2.0),+1.0x -4.0)),2.0)),div(plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),-1.0x^4 +2.4x^2 +3.1)),-1.0x^4 +2.4x^2 +3.1),+0.1x^5 -1.2999999999999998x +5.0)");
+        ComplexFunction cf7 = new ComplexFunction("0.1x^5 -1.2999999999999998x +5.0");
+        Functions_GUI a=new Functions_GUI();
+        a.add(cf1);
+        a.add(cf2);
+        a.add(cf3);
+        a.add(cf4);
+        a.add(cf5);
+        a.add(cf6);
+        a.add(cf7);
+        for (int i = 0; i < a.size(); i++) {
+            System.out.println(a);
+        }
+	}
 }

@@ -8,38 +8,38 @@ private Operation P;
 
  public ComplexFunction() {
 	// TODO Auto-generated constructor stub
-	this.right=new Polynom("0");
+	this.right=null;
 	this.left=new Polynom("0");
 	this.P=Operation.None;
 }
  public ComplexFunction(function f1)
  {
 	 this.left=f1.copy();
-	 this.right=new Polynom("0");
+	 this.right=null;
 	 this.P=Operation.None;
  }
  public ComplexFunction(Operation OP,function f1,function f2) {
-	String s=fix_op(OP.toString());
-	switch (s) {
-	case "Plus":
+	//String s=fix_op(OP.toString());
+	switch (OP) {
+	case Plus:
 		P=P.Plus;
 		break;
-	case "Times":
+	case Times:
 		P=P.Times;
 		break;
-	case "Divid":
+	case Divid:
 		P=P.Divid;
 		break;
-	case "Max":
+	case Max:
 		P=P.Max;
 		break;
-	case "Min":
+	case Min:
 		P=P.Min;
 		break;
-	case "Comp":
+	case Comp:
 		P=P.Comp;
 		break;
-	case "None":
+	case None:
 		throw new RuntimeException( "ERR: operation can't be None");
 	default:
 		throw new RuntimeException("ERR:  you entered iligal Operatin. got"+OP);
@@ -191,6 +191,7 @@ private Operation P;
 	@Override
 	public void mul(function f1) {
 		// TODO Auto-generated method stub
+		
 		if(f1.toString().equals("1.0"))
 			return ;
 		if(this.left.toString().equals("0.0")&&this.P.toString().equals("None"))
@@ -319,8 +320,7 @@ private Operation P;
 			for(int i=0;i<20;i++)
 			{
 				if(Math.abs(((ComplexFunction) obj).f(i)-this.f(i))>0.000001)
-					return false;
-					
+					return false;		
 			}
 		}
 		if( obj instanceof function)

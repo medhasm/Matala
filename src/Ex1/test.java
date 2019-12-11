@@ -1,5 +1,10 @@
 package Ex1;
 import Ex1.ComplexFunction;
+import Ex1.Functions_GUI;
+import Ex1.Monom;
+import Ex1.Polynom;
+import Ex1.Range;
+import Ex1.function;
 public class test {
 	public static void main(String[] args) {
 		String s1 = " +x";
@@ -47,14 +52,9 @@ public class test {
 		//ComplexFunction cf=new ComplexFunction();
 		//ComplexFunction f1=(ComplexFunction) cf.initFromString("Plus(2x,x)");
 		//System.out.println(f1);
-
-		ComplexFunction cf1=new ComplexFunction();
+		/**ComplexFunction cf1=new ComplexFunction();
 		System.out.println(cf1);
 		ComplexFunction df=(ComplexFunction) cf1.initFromString("Plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0)");
-		System.out.println(df);
-		
-
-				
+		System.out.println(df);*/
 	}
-
 }
