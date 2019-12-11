@@ -259,11 +259,12 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return this.P;
 	}
-	@Override
-	public String toString()
-	{
-		return this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")";
+		@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.P.toString()+"("+this.left+"," +this.right+")";
 	}
+
 	/**
 	 * 
 	 */
@@ -284,10 +285,7 @@ private Operation P;
 		}
 		return 0;
 	}
-	@Override
-	public String tostring() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+
 	
 }
