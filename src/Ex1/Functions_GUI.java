@@ -39,7 +39,8 @@ public class Functions_GUI implements functions {
 	@Override
 	public boolean addAll(Collection<? extends function> arg0) {
 		// TODO Auto-generated method stub
-		return false;
+	return	func.addAll(arg0);
+		
 	}
 
 	@Override
@@ -189,30 +190,25 @@ public class Functions_GUI implements functions {
 	@Override
 	public void drawFunctions(String json_file) {
 		// TODO Auto-generated method stub	
+
 		JSONParser parser = new JSONParser();
 		 
         try {
  
-            Object obj = parser.parse(new FileReader(
-                    "/Users/<username>/Documents/file1.txt"));
+            Object obj = parser.parse(new FileReader(json_file));
  
             JSONObject jsonObject = (JSONObject) obj;
  
             int Width = (int) jsonObject.get("Width");
             int Height = (int) jsonObject.get("Height");
-            JSONArray  = (JSONArray) jsonObject.get("Company List");
- 
-            System.out.println("Name: " + name);
-            System.out.println("Author: " + author);
-            System.out.println("\nCompany List:");
-            Iterator<String> iterator = companyList.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next());
-            }
- 
+            int Resolution=(int) jsonObject.get("Resolution");
+            Range Range_X=(Range) jsonObject.get("Range_X");
+            Range Range_Y=(Range) jsonObject.get("Range_Y");
+            this.drawFunctions(Width, Height, Range_X, Range_Y,Resolution);
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        } 
+        
 	}
 	public function get(int i) {
 		// TODO Auto-generated method stub

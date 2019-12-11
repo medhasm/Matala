@@ -48,25 +48,26 @@ private Operation P;
 	this.left=f1;
 	this.right=f2;
  }
- private String fix_op(String s)
+ private Operation fix_op(String s)
  {
-	 if (s.equals("plus"))
-		 return "Plus";
-	 if(s.equals("times"))
-		 return "Times";
-	 if(s.equals("divid"))
-		 return "Divid";
-	 if(s.equals("none"))
-	 	return "None";
-	 if(s.equals("min"))
-		 return "Min";
-	 if(s.equals("max"))
-		 return "Max";
-	 if (s.equals("comp")) 
-		 return "Comp";
-	 if(s.equals("error"))
-		 return "Error";
-	 return this.P.toString();
+	 switch (s) {
+	 case "plus":
+		 return Operation.Plus;
+	 case "times":
+		 return Operation.Times;
+	 case "divid":
+		 return Operation.Divid;
+	 case "none":
+	 	return Operation.None;
+	 case "min":
+		 return Operation.Min;
+	 case "max":
+		 return Operation.Max;
+	 case "comp": 
+		 return Operation.Comp;
+	 case "error":
+		 return Operation.Error;
+	 
 	
  }
  public ComplexFunction(String s,function f1,function f2)
@@ -191,21 +192,28 @@ private Operation P;
 	@Override
 	public void mul(function f1) {
 		// TODO Auto-generated method stub
-		if(f1.toString().equals("1.0"))
-			return ;
-		if(this.left.toString().equals("0.0")&&this.P.toString().equals("None"))
-			this.left=new ComplexFunction(f1.toString());
-		else
-			if(this.right.toString().equals("null")&&this.P.toString().equals("None")){
-				this.right=f1;
+		
+		if(this.P==Operation.None) {
+			
+		
+		if(this.left.toString().equals("0.0")) {
+			this.left=f1;
+		this.P=Operation.Times;
 		}
-		else {
+		else
+			if(right==null){
+				right=f1;
+				P=Operation.Times;
+		}
+		}else {
 			ComplexFunction cf=new ComplexFunction(this.P,this.left,this.right);
 			this.left=cf;
 			this.right=f1;
+			this.P=Operation.Times;
 			}
-		P=Operation.Times;
+	
 	}
+	
 	@Override
 	public void div(function f1) {
 		// TODO Auto-generated method stub
@@ -343,4 +351,12 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
 	}*/
+	public static void main(String[] args) {
+		function f=null;
+		System.out.println(f);
+		
+				if(f==null)
+					System.out.println("1");
+						
+	}
 }

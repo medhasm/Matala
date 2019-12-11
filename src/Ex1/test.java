@@ -7,6 +7,16 @@ import Ex1.Range;
 import Ex1.function;
 public class test {
 	public static void main(String[] args) {
+
+	
+		/**Functions_GUI data = FunctionsFactory();
+		int w=1000, h=600, res=200;
+		Range rx = new Range(-10,10);
+		Range ry = new Range(-5,15);
+		data.drawFunctions(w,h,rx,ry,res);
+		*/
+			
+
 		String s1 = " +x";
 		String s2 = "5 +2x -3.3x +0.1x^5";
 		String[] s3 = {"x +3","x -2", "x-4"};
@@ -55,6 +65,7 @@ public class test {
 		/**ComplexFunction cf1=new ComplexFunction();
 		System.out.println(cf1);
 		ComplexFunction df=(ComplexFunction) cf1.initFromString("Plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0)");
+<<<<<<< HEAD
 		System.out.println(df);*/
 	}
 }
