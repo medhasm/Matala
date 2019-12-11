@@ -19,26 +19,27 @@ private Operation P;
 	 this.P=Operation.None;
  }
  public ComplexFunction(Operation OP,function f1,function f2) {
-	switch (OP) {
-	case Plus:
+	String s=fix_op(OP.toString());
+	switch (s) {
+	case "Plus":
 		P=P.Plus;
 		break;
-	case Times:
+	case "Times":
 		P=P.Times;
 		break;
-	case Divid:
+	case "Divid":
 		P=P.Divid;
 		break;
-	case Max:
+	case "Max":
 		P=P.Max;
 		break;
-	case Min:
+	case "Min":
 		P=P.Min;
 		break;
-	case Comp:
+	case "Comp":
 		P=P.Comp;
 		break;
-	case None:
+	case "None":
 		throw new RuntimeException( "ERR: operation can't be None");
 	default:
 		throw new RuntimeException("ERR:  you entered iligal Operatin. got"+OP);
@@ -47,7 +48,30 @@ private Operation P;
 	this.left=f1;
 	this.right=f2;
  }
- public ComplexFunction(String s,function f1,function f2) {
+ private String fix_op(String s)
+ {
+	 if (s.equals("plus"))
+		 return "Plus";
+	 if(s.equals("times"))
+		 return "Times";
+	 if(s.equals("divid"))
+		 return "Divid";
+	 if(s.equals("none"))
+	 	return "None";
+	 if(s.equals("min"))
+		 return "Min";
+	 if(s.equals("max"))
+		 return "Max";
+	 if (s.equals("comp")) 
+		 return "Comp";
+	 if(s.equals("error"))
+		 return "Error";
+	 return this.P.toString();
+	
+ }
+ public ComplexFunction(String s,function f1,function f2)
+ {
+	 	s=fix_op(s);
 		switch (s) {
 		case "Plus":
 			P=Operation.Plus;
@@ -255,20 +279,13 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return this.P;
 	}
-<<<<<<< HEAD
-	/**@Override
-	public String toString()
-	{	
-		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
-	}*/
-=======
+
 		@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return this.P.toString()+"("+this.left+"," +this.right+")";
 	}
 
->>>>>>> 0699dca8c8681187fc5bc5ac7e176d441c92b5ad
 	/**
 	 * 
 	 */
@@ -289,22 +306,42 @@ private Operation P;
 		}
 		return 0;
 	}
-<<<<<<< HEAD
-	@Override
+	public boolean equals(Object obj) {
+		String this_func=this.toString();
+		String obj_func=obj.toString();
+		this_func.replaceAll(" ", "");
+		obj_func.replaceAll(" ", "");
+		if(this_func.length()!=obj_func.length())
+			return false;
+		if (obj instanceof ComplexFunction)
+		{
+			
+			for(int i=0;i<20;i++)
+			{
+				if(Math.abs(((ComplexFunction) obj).f(i)-this.f(i))>0.000001)
+					return false;
+					
+			}
+		}
+		if( obj instanceof function)
+		{
+			for(int i=0;i<20;i++)
+				if(Math.abs(((function) obj).f(i)-this.f(i))>0.000001)
+					return false;
+		}
+		return true;
+		
+		
+	}
+	/**@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
 		
-	}
-	@Override
+	}*/
+	/**@Override
 	public String tostring() {
 		// TODO Auto-generated method stub
 		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
-	}
-=======
-
-
->>>>>>> 0699dca8c8681187fc5bc5ac7e176d441c92b5ad
-	
-	
+	}*/
 }
