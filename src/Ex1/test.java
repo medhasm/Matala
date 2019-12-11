@@ -43,6 +43,9 @@ public class test {
 		System.out.println(f);
 		ComplexFunction cf=new ComplexFunction(f);
 		System.out.println(cf);
+		ComplexFunction df=(ComplexFunction) cf.initFromString("Plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0)");
+		System.out.println(df);
+		
 				
 	}
 

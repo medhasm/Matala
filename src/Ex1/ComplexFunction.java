@@ -51,22 +51,22 @@ private Operation P;
  public ComplexFunction(String s,function f1,function f2) {
 		switch (s) {
 		case "Plus":
-			P=P.Plus;
+			P=Operation.Plus;
 			break;
 		case "Times":
-			P=P.Times;
+			P=Operation.Times;
 			break;
 		case "Divid":
-			P=P.Divid;
+			P=Operation.Divid;
 			break;
 		case "Max":
-			P=P.Max;
+			P=Operation.Max;
 			break;
 		case "Min":
-			P=P.Min;
+			P=Operation.Min;
 			break;
 		case "Comp":
-			P=P.Comp;
+			P=Operation.Comp;
 			break;
 		case "None":
 			throw new RuntimeException( "ERR: operation can't be None");
@@ -128,7 +128,7 @@ private Operation P;
 			if(s.contains(",")) {
 				git=this.GIO(s);
 				f1=cf.initFromString(s.substring(s.indexOf('(')+1, git));
-				f2=cf.initFromString(s.substring(git+1 ,s.length()));
+				f2=cf.initFromString(s.substring(git+1 ,s.length()-1));
 				if(s.equals(",(")||s.equals("),")) {
 					if(s.equals(",(")) {
 						throw new RuntimeException("Err:left function cant be null"); 			
@@ -136,10 +136,11 @@ private Operation P;
 							f2=new Polynom("0");
 					}
 				}
-				 cf=new ComplexFunction(s.substring(0, s.indexOf('(')),f1,f2);
+				return cf=new ComplexFunction(s.substring(0, s.indexOf('(')),f1,f2);
 			}
+			
 		
-		return cf;
+		return new Polynom(s);
 	}
 
 	@Override
@@ -258,9 +259,10 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return this.P;
 	}
-	public String tostring()
+	@Override
+	public String toString()
 	{
-		return "("+left.toString()+","+right.toString()+")";
+		return this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")";
 	}
 	/**
 	 * 
@@ -281,6 +283,11 @@ private Operation P;
 		
 		}
 		return 0;
+	}
+	@Override
+	public String tostring() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
