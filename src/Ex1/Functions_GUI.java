@@ -113,9 +113,12 @@ public class Functions_GUI implements functions {
 	@Override
 	public void initFromFile(String file) throws IOException {
 		// TODO Auto-generated method stub
+
+
 		//InputStream fis = new FileInputStream(file);
 		///JsonReader jsonReader = Json.createReader(fis);
 		try {
+
 		FileReader file_reader=new FileReader(file);
 		BufferedReader br = new BufferedReader(file_reader);
 		String st; 
