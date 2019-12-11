@@ -50,5 +50,5 @@ public interface complex_function extends function{
 	 * @return
 	 */
 	public Operation getOp();
-	String tostring();
+
 }

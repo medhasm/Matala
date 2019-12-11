@@ -255,11 +255,20 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return this.P;
 	}
+<<<<<<< HEAD
 	/**@Override
 	public String toString()
 	{	
 		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
 	}*/
+=======
+		@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.P.toString()+"("+this.left+"," +this.right+")";
+	}
+
+>>>>>>> 0699dca8c8681187fc5bc5ac7e176d441c92b5ad
 	/**
 	 * 
 	 */
@@ -280,6 +289,7 @@ private Operation P;
 		}
 		return 0;
 	}
+<<<<<<< HEAD
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
@@ -291,6 +301,10 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
 	}
+=======
+
+
+>>>>>>> 0699dca8c8681187fc5bc5ac7e176d441c92b5ad
 	
 	
 }
