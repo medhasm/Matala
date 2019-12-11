@@ -176,12 +176,12 @@ private Operation P;
 		if(this.P==Operation.None) {
 			
 			
-		if(this.left.toString().equals("0.0")) {
+		if(this.left.toString().equals("+0.0x^0")) {
 			this.left=f1;
 		this.P=Operation.Plus;
 	}
 		else
-			if(this.right.toString().equals("0.0")){
+			if(this.right.toString().equals("+0.0x^0")){
 				this.right=f1;
 				this.P=Operation.Plus;
 		}
@@ -215,12 +215,12 @@ private Operation P;
 		if(this.P==Operation.None) {
 			
 		
-		if(this.left.toString().equals("0.0")) {
+		if(this.left.toString().equals("+0.0x^0")) {
 			this.left=f1;
 		this.P=Operation.Times;
 	}
 		else
-			if(this.right.toString().equals("0.0")){
+			if(this.right.toString().equals("+0.0x^0")){
 				this.right=f1;
 				this.P=Operation.Times;
 		}
@@ -236,15 +236,14 @@ private Operation P;
 	@Override
 	public void div(function f1) {
 		// TODO Auto-generated method stub
-		if(f1.toString().equals("0.0"))
+		if(f1.toString().equals("+0.0x^0"))
 			throw new RuntimeException("ERR: YOU CAN'T DIVID BY ZERO!!");
-		if(f1.toString().equals("1.0"))
-			return ;
+		if(this.P==Operation.None) {
 		
-		
-			if(right.toString().equals("0.0")&&P.toString().equals("None")){
+			if(right.toString().equals("+0.0x^0")){
 				right=f1;
 				this.P=Operation.Divid;
+		}
 		}
 		else {
 			ComplexFunction cf=new ComplexFunction(this.P,left, right);
@@ -263,7 +262,7 @@ private Operation P;
 		if(this.P==Operation.None) {
 		
 			
-				if(this.right.toString().equals("0.0")){
+				if(this.right.toString().equals("+0.0x^0")){
 					this.right=f1;
 					this.P=Operation.Max;
 			}
@@ -288,7 +287,7 @@ private Operation P;
 		if(this.P==Operation.None) {
 			
 			
-			if(this.right.toString().equals("0.0")){
+			if(this.right.toString().equals("+0.0x^0")){
 				this.right=f1;
 				this.P=Operation.Min;
 		}

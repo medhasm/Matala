@@ -4,7 +4,7 @@ public class test {
 	public static void main(String[] args) {
 
 	
-		Functions_GUI data = new Functions_GUI();
+		Functions_GUI data = FunctionsFactory();
 		Polynom P=new Polynom("3x^2+3");
 		data.add(P);
 		int w=1000, h=600, res=200;
@@ -46,9 +46,13 @@ public class test {
 			ans.add(cf6.copy());
 			ComplexFunction max = new ComplexFunction(ans.get(0).copy());
 			ComplexFunction min = new ComplexFunction(ans.get(0).copy());
+			System.out.println("Max:"+max);
+			System.out.println( "Min:"+min);
 			for(int i=1;i<ans.size();i++) {
 				max.max(ans.get(i));
 				min.min(ans.get(i));
+				System.out.println("Interation "+i+ "-Max:"+max);
+				System.out.println( "Interation "+i+ "-Min:"+min);
 			}
 			ans.add(max);
 			ans.add(min);
