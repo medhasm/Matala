@@ -191,7 +191,6 @@ private Operation P;
 	@Override
 	public void mul(function f1) {
 		// TODO Auto-generated method stub
-		
 		if(f1.toString().equals("1.0"))
 			return ;
 		if(this.left.toString().equals("0.0")&&this.P.toString().equals("None"))
