@@ -30,7 +30,8 @@ public class Functions_GUI implements functions {
 	@Override
 	public boolean addAll(Collection<? extends function> arg0) {
 		// TODO Auto-generated method stub
-		return false;
+	return	func.addAll(arg0);
+		
 	}
 
 	@Override
@@ -177,6 +178,8 @@ public class Functions_GUI implements functions {
 	@Override
 	public void drawFunctions(String json_file) {
 		// TODO Auto-generated method stub	
+		
+		
 	}
 	public function get(int i) {
 		// TODO Auto-generated method stub

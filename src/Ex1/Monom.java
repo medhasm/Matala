@@ -176,6 +176,14 @@ public class Monom implements function{
 		
 		return M;
 	}
-	
-	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj==null || !(obj instanceof Monom)){return false;}
+			Monom m= (Monom) obj;
+			if(this._coefficient==m._coefficient && this._power==m.get_power()) {
+				return true;
+			}
+		
+		return false;
+	}
 }

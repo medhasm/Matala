@@ -171,21 +171,27 @@ private Operation P;
 	@Override
 	public void mul(function f1) {
 		// TODO Auto-generated method stub
-		if(f1.toString().equals("1.0"))
-			return ;
-		if(this.left.toString().equals("0.0")&&this.P.toString().equals("None"))
-			this.left=new ComplexFunction(f1.toString());
+		
+		if(this.P==Operation.None) {
+			
+		
+		if(this.left.toString().equals("0.0")&&this.P==Operation.None) {
+			this.left=f1;
+		this.P=Operation.Times;
+	}
 		else
-			if(this.right.toString().equals("null")&&this.P.toString().equals("None")){
+			if(this.right.toString().equals("0.0")&&this.P==Operation.None){
 				this.right=f1;
+				this.P=Operation.Times;
 		}
-		else {
+		}else {
 			ComplexFunction cf=new ComplexFunction(this.P,this.left,this.right);
 			this.left=cf;
 			this.right=f1;
 			}
-		P=Operation.Times;
+	
 	}
+	
 	@Override
 	public void div(function f1) {
 		// TODO Auto-generated method stub
