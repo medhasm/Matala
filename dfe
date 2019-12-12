@@ -1,0 +1,79 @@
+[33mcommit db37fc4c201e68de61c8927a2915ac65b035fb02[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 343b48a ac29fea
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Mon Dec 9 21:02:24 2019 +0200
+
+    Merge branch 'master' of https://github.com/medhasm/Matala
+
+[33mcommit 343b48a7e27db21e00fcbe38a7a26435e2bf98c6[m
+Merge: 13a6d6b a5b5146
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Mon Dec 9 21:02:05 2019 +0200
+
+    updates
+
+[33mcommit ac29feadf00ec010b5208470ce4ff1d1033af1a6[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: AseelNemer <AseelNemer@users.noreply.github.com>
+Date:   Mon Dec 9 20:13:10 2019 +0200
+
+    update complexfunction constructor (with string op )
+
+[33mcommit 13a6d6b80e816d2c5ba98dfc7d793e9433248d93[m
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Mon Dec 9 20:12:45 2019 +0200
+
+    ..
+
+[33mcommit a5b514662f42c643ab9fd05510b57b9d9b2091ab[m
+Author: AseelNemer <AseelNemer@users.noreply.github.com>
+Date:   Mon Dec 9 20:03:31 2019 +0200
+
+    .
+
+[33mcommit 6e7cea49e104ecf34d1808c3d410eb67404b87ff[m
+Author: AseelNemer <AseelNemer@users.noreply.github.com>
+Date:   Mon Dec 9 19:40:45 2019 +0200
+
+    .
+
+[33mcommit 1c0f78b3c173a0f2e2a3ebbaaf43f77e65d2b07d[m
+Author: AseelNemer <AseelNemer@users.noreply.github.com>
+Date:   Mon Dec 9 18:48:31 2019 +0200
+
+    ..
+
+[33mcommit c05eff00117bb1f9e4135419f66bdf7854056d84[m
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Mon Dec 9 06:45:08 2019 +0200
+
+    update method F in CMFU
+
+[33mcommit 7cc7779cbaf2dc47930466b0f0ba3d6db9a074c4[m
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Mon Dec 9 06:32:35 2019 +0200
+
+    update method F in CMFU
+
+[33mcommit b6059d6551386e334dd353bb24f8c058390ecce4[m
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Mon Dec 9 04:59:07 2019 +0200
+
+    update complex function class
+
+[33mcommit b8d797085fa636d9de621b8c976de20c6b6688ac[m
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Sun Dec 8 23:33:41 2019 +0200
+
+    ..
+
+[33mcommit f91d86b89b998d9e911c83307930e079fe45f913[m
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Sun Dec 8 23:32:32 2019 +0200
+
+    .
+
+[33mcommit d3827c32204d2e248243a41244e885699cef26ae[m
+Author: Medhat <medhatsmar@hotmail.com>
+Date:   Sun Dec 8 23:23:12 2019 +0200
+
+    first commit
