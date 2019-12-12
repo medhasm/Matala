@@ -141,6 +141,7 @@ private Operation P;
 	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
+		
 		s=s.replace(" ","");
 		int git;
 		ComplexFunction cf=new ComplexFunction();
@@ -262,7 +263,7 @@ private Operation P;
 		if(this.P==Operation.None) {
 		
 			
-				if(this.right.toString().equals("+0.0x^0")){
+				if(this.right.equals(new Polynom("0"))){
 					this.right=f1;
 					this.P=Operation.Max;
 			}

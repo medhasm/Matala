@@ -186,4 +186,9 @@ public class Monom implements function{
 		
 		return false;
 	}
-}
+	public static void main(String[] args) {
+		Monom m=new Monom(3,2);
+		System.out.println(m);
+	}
+	}
+

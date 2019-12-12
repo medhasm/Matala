@@ -1,4 +1,6 @@
 package Ex1;
+import java.io.IOException;
+
 import Ex1.ComplexFunction;
 public class test {
 	public static void main(String[] args) {
@@ -10,11 +12,25 @@ public class test {
 		int w=1000, h=600, res=200;
 		Range rx = new Range(-10,10);
 		Range ry = new Range(-5,15);
-		data.drawFunctions(w,h,rx,ry,res);
+		//data.drawFunctions(w,h,rx,ry,res);
 		
 			
 
-
+		Functions_GUI ans =new Functions_GUI();
+		ans.add(new Polynom("3x^5+7"));
+		ans.add(new ComplexFunction("Plus",new Polynom ("4x^5+3"),new Monom("24x")));
+		ans.add(new Polynom("x^5+x^4+x^3+x^2+x"));
+		Functions_GUI data1 =new Functions_GUI();
+		try {
+			ans.saveToFile("C:\\Users\\Medhat\\Desktop\\FuGUITst\\FuGUI.txt");
+			data1.initFromFile("C:\\Users\\Medhat\\Desktop\\FuGUITst\\FuGUI.txt");
+			System.out.println(ans.toString());
+			System.out.println(data1.toString());
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 
 				
 
@@ -62,6 +78,6 @@ public class test {
 			return ans;
 		}
 	
-
+	
 
 }

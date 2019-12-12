@@ -123,9 +123,10 @@ public class Functions_GUI implements functions {
 		BufferedReader br = new BufferedReader(file_reader);
 		String st; 
 		ComplexFunction cf = new ComplexFunction();
-		  while ((st = br.readLine()) != null) 
+		  while ((st = br.readLine()) != null) {
 		    System.out.println(st); 
 		  func.add(cf.initFromString(st));
+		  }
 	}catch(IOException e) {
 		e.printStackTrace();
 	}
@@ -138,7 +139,7 @@ public class Functions_GUI implements functions {
 		File file1 = new File (file);
         BufferedWriter out = new BufferedWriter(new FileWriter(file1));
 		for(int i=0;i<func.size();i++) {
-			bf=new StringBuffer ((i+1)+")"+func.get(i).toString());
+			bf=new StringBuffer (func.get(i).toString());
 			out.write(new String(bf));
 			out.newLine();
 		}
@@ -215,6 +216,16 @@ public class Functions_GUI implements functions {
 		// TODO Auto-generated method stub
 		return this.func.get(i);
 	}
+	
+	public String toString() {
+		String ans="";
+		for(int i=0;i<func.size();i++) {
+			ans+=func.get(i) +"\n";
+		}
+		return ans;
+	}
 	public static Color[] Colors = {Color.blue, Color.cyan,
 			Color.MAGENTA, Color.ORANGE, Color.red, Color.GREEN, Color.PINK};
 }
+
+
