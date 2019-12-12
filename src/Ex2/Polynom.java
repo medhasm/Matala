@@ -7,9 +7,10 @@ import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Predicate;
-import Ex2.Polynom_able;
+
 import Ex2.Monom;
 import Ex2.Monom_Comperator;
+import Ex2.Polynom_able;
 
 //import Ex1Testing.polynomtest;
 
