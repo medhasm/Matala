@@ -215,7 +215,9 @@ public class Functions_GUI implements functions {
 		JSONParser parser = new JSONParser();
         try 
         {
-            Object obj = parser.parse(new FileReader(json_file));
+        	FileReader file_reader=new FileReader(file);
+    		JsonReader jsonReader = Json.createReader(fis)
+            JSON obj = parser.parse(new FileReader(json_file));
             JSONObject jsonObject = (JSONObject) obj;
             
             int Width = (int) jsonObject.get("Width");

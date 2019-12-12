@@ -4,6 +4,7 @@ package Ex2;
  * @author boaz_benmoshe
  *
  */
+
 public class Range {
 	private double _min, _max;
 	public Range(double min, double max) {

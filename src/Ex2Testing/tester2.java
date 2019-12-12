@@ -1,4 +1,4 @@
-package Ex1Testing;
+package Ex2Testing;
 
 
 import java.io.IOException;
