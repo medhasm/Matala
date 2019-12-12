@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-
+import Ex1Testing.polynomtest;
 
 import  java.util.Map;
 /**
@@ -37,17 +37,14 @@ this.poly2.add(new Monom("0"));
 	 */
 	public Polynom(String s) {
 		s=s.replace(" ", "");
-	
 		List<Character> c= new ArrayList<Character>();
-	for (int i = 0; i <s.length() ; i++){
+		for (int i = 0; i <s.length() ; i++){
 			if((s.charAt(i)=='+')||s.charAt(i)=='-'){
 				c.add(s.charAt(i));
 			}
 		}
-
 		StringTokenizer str = new StringTokenizer(s,"+-");
 		Iterator<Character> it= c.iterator();
-
 		String is=""; 
 		char b;
 		if(str.countTokens()==c.size()) {/// then the first arithmetic is minus
@@ -55,28 +52,20 @@ this.poly2.add(new Monom("0"));
 			is=b+str.nextToken();
 			Monom m= new Monom(is);
 			this.poly2.add(m);
-			
-			
 		}
 		else {
-
 			is=str.nextToken();
 			Monom m= new Monom(is);
-			this.poly2.add(m);
-			
-			
+			this.poly2.add(m);		
 		}
 		while(str.hasMoreTokens()){
 			b = it.next();
 			is=b+str.nextToken();
 			Monom m= new Monom(is);
 			this.poly2.add(m);
-		
-			
 		}
+		this.Zeroclean();
 		poly2.sort(Monom._Comp);
-		
-		
 	}
 	@Override
 	public double f(double x) {
@@ -118,6 +107,7 @@ this.poly2.add(new Monom("0"));
 		
 		
 			}
+			this.Zeroclean();
 			poly2.sort(Monom._Comp);
 	
 
@@ -140,12 +130,10 @@ this.poly2.add(new Monom("0"));
 			}
 		}
 			if(flag) {
-				int x=poly2.size();
-				poly2.add(m1);
-				
-			
-				
+				//int x=poly2.size();
+				poly2.add(m1);	
 			}
+			this.Zeroclean();
 			poly2.sort(Monom._Comp);
 		
 		}
@@ -186,6 +174,7 @@ this.poly2.add(new Monom("0"));
 			m.set_coefficient1( m.get_coefficient()*(-1));
 			poly2.add(m);
 		} 
+		this.Zeroclean();
 		poly2.sort(Monom._Comp);
 		
 		}
@@ -386,6 +375,25 @@ this.poly2.add(new Monom("0"));
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
 		return new Polynom(s);
+	}
+	public static void main(String[] args) {
+		Polynom p1=new Polynom("2x+3");
+		Polynom p2=(Polynom) p1.copy();
+		System.out.println(p1.toString().equals(p2.toString()));
+	}
+	private void Zeroclean()
+	{
+		
+		Monom zero=new Monom("0");
+		Iterator<Monom> itr=this.iteretor();
+		while(itr.hasNext())
+		{
+			Monom m=itr.next();
+			if(m.isZero())
+				itr.remove();
+		}
+		if (this.poly2.size()==0)
+			this.poly2.add(zero);
 	}
 	
 }
