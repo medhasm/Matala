@@ -138,12 +138,7 @@ private Operation P;
 	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
 		s=s.replaceAll(" ","");
-=======
-		
-		s=s.replace(" ","");
->>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386
 		int git;
 		ComplexFunction cf=new ComplexFunction();
 		function f1,f2;
@@ -269,28 +264,22 @@ private Operation P;
 		if (f1==null) {
 			return ;
 		}
-<<<<<<< HEAD
+
 		if(this.P==Operation.None) 
 		{
-				if(this.right.toString().equals("+0.0x^0"))
-				{
-=======
-		if(this.P==Operation.None) {
-		
-			
-				if(this.right.equals(new Polynom("0"))){
->>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386
+				if(this.right.toString().equals("+0.0x^0"))				
+				{					
 					this.right=f1;
 					this.P=Operation.Max;
 					}
 		}
-				else 
-				{
-					ComplexFunction cf=new ComplexFunction(this.P,left, right);
-					left=cf;
-					right=f1;
-					P=Operation.Max;
-				}	
+		else 
+		{
+			ComplexFunction cf=new ComplexFunction(this.P,left, right);
+			left=cf;
+			right=f1;
+			P=Operation.Max;
+		}	
 				
 		}
 	@Override
@@ -302,14 +291,9 @@ private Operation P;
 		}
 		if(this.P==Operation.None) 
 		{
-			
-			
-<<<<<<< HEAD
 			if(this.right.toString().equals("+0.0x^0"))
 			{
-=======
-			if(this.right.equals(new Polynom("0"))){
->>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386
+
 				this.right=f1;
 				this.P=Operation.Min;
 		}

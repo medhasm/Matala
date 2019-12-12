@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-import Ex1Testing.polynomtest;
+//import Ex1Testing.polynom;
 
 import  java.util.Map;
 /**
