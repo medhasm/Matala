@@ -143,13 +143,7 @@ private Operation P;
 	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD:src/Ex1/ComplexFunction.java
 		 s=s.replaceAll(" ","");
-=======
-
-		s=s.replaceAll(" ","");
->>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2/ComplexFunction.java
-
 		int git;
 		ComplexFunction cf=new ComplexFunction();
 		function f1,f2;
@@ -199,22 +193,7 @@ private Operation P;
 			this.right=f1;
 			this.P=Operation.Plus;
 			}
-	/*
-		if(f1.toString().equals("0.0"))
-			return ;
-		if(left.toString().equals("0.0")&&P.toString().equals("None"))
-			left=new ComplexFunction(f1.toString());
-		else
-		if(right.toString().equals("0.0")&&P.toString().equals("None")){
-				right=f1;
-		}
-		else {
-			ComplexFunction cf=new ComplexFunction(this.P,left, right);
-			left=cf;
-			right=f1;
-			}
-		P=Operation.Plus;
-		*/
+
 	}
 	@Override
 	public void mul(function f1) {
@@ -278,13 +257,10 @@ private Operation P;
 
 		if(this.P==Operation.None) 
 		{
-<<<<<<< HEAD:src/Ex1/ComplexFunction.java
+
 				if(this.right.toString().equals("+0.0x^0"))				
 				{					
-=======
-				if(this.right.toString().equals("+0.0x^0"))
-				{
->>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2/ComplexFunction.java
+
 
 					this.right=f1;
 					this.P=Operation.Max;
@@ -309,21 +285,11 @@ private Operation P;
 		}
 		if(this.P==Operation.None) 
 		{
-<<<<<<< HEAD:src/Ex1/ComplexFunction.java
-
-			
-			
-
-
-
-
-			if(this.right.toString().equals("+0.0x^0"))
-			{
-=======
+		
 			if(this.right.toString().equals("+0.0x^0"))
 			{
 
->>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2/ComplexFunction.java
+
 				this.right=f1;
 				this.P=Operation.Min;
 		}
@@ -423,16 +389,6 @@ private Operation P;
 		}
 		return true;
 	}
-	/**@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
-		
-	}*/
-	/**@Override
-	public String tostring() {
-		// TODO Auto-generated method stub
-		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
-	}*/
+
 
 }
