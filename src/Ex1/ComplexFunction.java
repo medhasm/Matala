@@ -131,16 +131,14 @@ private Operation P;
 	public ComplexFunction(String s)
 	{
 		ComplexFunction cf =new ComplexFunction();
-		cf.initFromString(s);
+		cf=(ComplexFunction) cf.initFromString(s);
 		this.left=cf.left.copy();
 		this.right=cf.right.copy();
 		this.P=cf.P;
 	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
-
-
-		s=s.replaceAll(" ","");
+		 s=s.replaceAll(" ","");
 
 		int git;
 		ComplexFunction cf=new ComplexFunction();

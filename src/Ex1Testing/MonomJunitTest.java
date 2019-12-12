@@ -1,8 +1,12 @@
 
 package Ex1Testing;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.Before;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +16,7 @@ import Ex1.Monom;
 
 class MonomJunitTest {
 	Monom m ,d ,e;
-	@BeforeEach
+	@Before
 	void init()
 	{
 		  m=new Monom();

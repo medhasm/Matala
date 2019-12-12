@@ -1,20 +1,13 @@
 package Ex1Testing;
 
 
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
-
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.function.Function;
 
 import org.junit.Before;
-import org.junit.Test;
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import Ex1.ComplexFunction;
 import Ex1.Functions_GUI;
@@ -39,7 +32,7 @@ import Ex1.functions;
 class Functions_GUITest {
 	public static void main(String[] a) {
 
-	Functions_GUI data = FunctionsFactory();
+	functions data = FunctionsFactory();
 
 		int w=1000, h=600, res=200;
 		Range rx = new Range(-10,10);
