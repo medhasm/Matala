@@ -212,23 +212,41 @@ public class Functions_GUI implements functions {
 	public void drawFunctions(String json_file)
 	{
 		// TODO Auto-generated method stub	
-		JSONParser parser = new JSONParser();
-        try 
+		
+        try file_reader
         {
-            Object obj = parser.parse(new FileReader(json_file));
-            JSONObject jsonObject = (JSONObject) obj;
+        	 FileReader file_read=new FileReader(json_file);
+        	JSONObject o = (JSONObject) new JSONParser().parse(file_reader);
+                  JSONArray X, Y;
+                  X= (JSONArray) JSONObject.get("Range_X");
+                  Y= (JSONArray) JSONObject.get("Range_Y");
+            long Width = (long) jSONObject.get("Width");
+            int wid=(int) Width;
+            long Height = (long) jSONObject.get("Height");
+            int hei= (int) Height;
+            long Resolution=(long) JSONObject.get("Resolution");
+            int res=(int) Resolution;
+            long[2] dx ,dy;
+            dx[0] = (long) X.get(0);
+            dx[1] = (long) X.get(1);
+            dy[0] = (long) Y.get(0);
+            dy[1] = (long) Y.get(1);
+            int[2] dxx,dyy;
+            dxx[0]  = (int) dx[0];
+            dyy[0]= (int) dy[0];
+            dxx[1]  = (int) dx[1];
+            dyy[1]= (int) dy[1];
+            Range _x=new Range(dxx[0],dxx[1]);
+            Range _y=new Range(dyy[0],dyy[1];
             
-            int Width = (int) jsonObject.get("Width");
-            int Height = (int) jsonObject.get("Height");
-            int Resolution=(int) jsonObject.get("Resolution");
-            Range Range_X=(Range) jsonObject.get("Range_X");
-            Range Range_Y=(Range) jsonObject.get("Range_Y");
-            this.drawFunctions(Width, Height, Range_X, Range_Y,Resolution);
+            this.drawFunctions(wid, hei, _x, _y,res);
         }
         catch (Exception e) 
         {
             e.printStackTrace();
-        } 
+        } }catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 	public function get(int i)
 	{

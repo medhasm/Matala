@@ -138,16 +138,14 @@ private Operation P;
 	public ComplexFunction(String s)
 	{
 		ComplexFunction cf =new ComplexFunction();
-		cf.initFromString(s);
+		cf=(ComplexFunction) cf.initFromString(s);
 		this.left=cf.left.copy();
 		this.right=cf.right.copy();
 		this.P=cf.P;
 	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
-
-		s=s.replaceAll(" ","");
-
+		 s=s.replaceAll(" ","");
 		int git;
 		ComplexFunction cf=new ComplexFunction();
 		function f1,f2;
@@ -197,22 +195,7 @@ private Operation P;
 			this.right=f1;
 			this.P=Operation.Plus;
 			}
-	/*
-		if(f1.toString().equals("0.0"))
-			return ;
-		if(left.toString().equals("0.0")&&P.toString().equals("None"))
-			left=new ComplexFunction(f1.toString());
-		else
-		if(right.toString().equals("0.0")&&P.toString().equals("None")){
-				right=f1;
-		}
-		else {
-			ComplexFunction cf=new ComplexFunction(this.P,left, right);
-			left=cf;
-			right=f1;
-			}
-		P=Operation.Plus;
-		*/
+
 	}
 	@Override
 	public void mul(function f1) {
@@ -276,22 +259,25 @@ private Operation P;
 
 		if(this.P==Operation.None) 
 		{
-				if(this.right.toString().equals("+0.0x^0"))
-				{
+
+				if(this.right.toString().equals("+0.0x^0"))				
+				{					
+
 
 					this.right=f1;
 					this.P=Operation.Max;
 					}
 		}
-				else 
-				{
-					ComplexFunction cf=new ComplexFunction(this.P,left, right);
-					left=cf;
-					right=f1;
-					P=Operation.Max;
-				}	
+		else 
+		{
+			ComplexFunction cf=new ComplexFunction(this.P,left, right);
+			left=cf;
+			right=f1;
+			P=Operation.Max;
+		}	
 				
 		}
+				
 	@Override
 	public void min(function f1) {
 		// TODO Auto-generated method stub
@@ -301,8 +287,10 @@ private Operation P;
 		}
 		if(this.P==Operation.None) 
 		{
+		
 			if(this.right.toString().equals("+0.0x^0"))
 			{
+
 
 				this.right=f1;
 				this.P=Operation.Min;
@@ -403,19 +391,6 @@ private Operation P;
 		}
 		return true;
 	}
-	/**@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
-		
-	}*/
-	/**@Override
-	public String tostring() {
-		// TODO Auto-generated method stub
-		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
-	}*/
-	public static void main(String[] args) {
-		
-						
-	}
+
+
 }

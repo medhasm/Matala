@@ -1901,7 +1901,6 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
 		StdDraw.text(0.8, 0.8, "white text");
 	}
 
-}
 
 
 //Copyright © 2000–2017, Robert Sedgewick and Kevin Wayne. 
