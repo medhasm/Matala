@@ -1,4 +1,6 @@
-package Ex1;
+package Ex2;
+
+import Ex2.function;
 
 /**
  * The interface represents a continuance function 

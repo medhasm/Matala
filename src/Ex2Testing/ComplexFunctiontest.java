@@ -1,4 +1,4 @@
-package Ex1Testing;
+package Ex2Testing;
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+<<<<<<< HEAD:src/Ex1Testing/ComplexFunctiontest.java
 import Ex1.ComplexFunction;
 import Ex1.Polynom;
 import Ex1.Monom;
@@ -16,6 +17,9 @@ import Ex1.Operation;
 
 public class ComplexFunctiontest {
 
+=======
+public class ComplexFunctiontest {
+>>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2Testing/ComplexFunctiontest.java
 
 	@Before
 	public void setUp() throws Exception {
@@ -27,6 +31,7 @@ public class ComplexFunctiontest {
 	}
 
 	@Test
+<<<<<<< HEAD:src/Ex1Testing/ComplexFunctiontest.java
 	public void testComplexFunction() 
 	{
 		try {
@@ -34,6 +39,9 @@ public class ComplexFunctiontest {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+=======
+	public void testComplexFunction() {
+>>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2Testing/ComplexFunctiontest.java
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -140,7 +148,12 @@ public class ComplexFunctiontest {
 	public void testMain() {
 		fail("Not yet implemented"); // TODO
 	}
+
 	public static void main(String[] args) {
 
 	}
 }
+
+
+}
+

@@ -1,6 +1,7 @@
-package Ex1;
+package Ex2;
 
-
+import Ex2.Operation;
+import Ex2.function;
 
 /** This interface represents a complex function of type y=g(f1(x), f2(x)), where both f1, f2 are functions (or complex functions), 
  * y and x are real numbers and g is an operation: plus, mul, div, max, min, comp (f1(f2(x))).

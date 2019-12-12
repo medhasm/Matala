@@ -1,7 +1,12 @@
-package Ex1;
+package Ex2;
 
+import Ex2.ComplexFunction;
+import Ex2.Operation;
+import Ex2.Polynom;
+import Ex2.complex_function;
+import Ex2.function;
 
-public class ComplexFunction implements complex_function {
+public  class ComplexFunction implements complex_function {
 private function left;
 private function right;
 private Operation P;
@@ -138,7 +143,12 @@ private Operation P;
 	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD:src/Ex1/ComplexFunction.java
 		 s=s.replaceAll(" ","");
+=======
+
+		s=s.replaceAll(" ","");
+>>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2/ComplexFunction.java
 
 		int git;
 		ComplexFunction cf=new ComplexFunction();
@@ -268,8 +278,13 @@ private Operation P;
 
 		if(this.P==Operation.None) 
 		{
+<<<<<<< HEAD:src/Ex1/ComplexFunction.java
 				if(this.right.toString().equals("+0.0x^0"))				
 				{					
+=======
+				if(this.right.toString().equals("+0.0x^0"))
+				{
+>>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2/ComplexFunction.java
 
 					this.right=f1;
 					this.P=Operation.Max;
@@ -294,6 +309,7 @@ private Operation P;
 		}
 		if(this.P==Operation.None) 
 		{
+<<<<<<< HEAD:src/Ex1/ComplexFunction.java
 
 			
 			
@@ -303,6 +319,11 @@ private Operation P;
 
 			if(this.right.toString().equals("+0.0x^0"))
 			{
+=======
+			if(this.right.toString().equals("+0.0x^0"))
+			{
+
+>>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2/ComplexFunction.java
 				this.right=f1;
 				this.P=Operation.Min;
 		}
