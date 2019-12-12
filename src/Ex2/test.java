@@ -1,6 +1,7 @@
 package Ex2;
 import Ex2.Monom;
 import Ex2.Polynom;
+import Ex2.Polynom_able;
 /**import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
 
