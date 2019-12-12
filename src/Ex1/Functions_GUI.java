@@ -22,9 +22,6 @@ import java.io.InputStream;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
- 
-
-
 
 public class Functions_GUI implements functions {
 	
@@ -153,7 +150,6 @@ public class Functions_GUI implements functions {
 		}
 		out.close();
 	}
-
 	@Override
 	public void drawFunctions(int width, int height, Range rx, Range ry, int resolution) {
 		// TODO Auto-generated method stub
