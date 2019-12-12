@@ -123,24 +123,18 @@ public class Functions_GUI implements functions {
 		///JsonReader jsonReader = Json.createReader(fis);
 		try {
 
-		FileReader file_reader=new FileReader(file);
-		BufferedReader br = new BufferedReader(file_reader);
-		String st; 
-		ComplexFunction cf = new ComplexFunction();
-		  while ((st = br.readLine()) != null) {
-		    System.out.println(st); 
-		  func.add(cf.initFromString(st));
-<<<<<<< HEAD
+			FileReader file_reader=new FileReader(file);
+			BufferedReader br = new BufferedReader(file_reader);
+			String st; 
+			ComplexFunction cf = new ComplexFunction();
+			  while ((st = br.readLine()) != null) {
+			    System.out.println(st); 
+			  func.add(cf.initFromString(st));
+			  }
+		}catch(IOException e) {
+			e.printStackTrace();
 		}
-		catch(IOException e) {
-=======
-		  }
-	}catch(IOException e) {
->>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386
-		e.printStackTrace();
-	}
-		
-	}
+		}
 	@Override
 	public void saveToFile(String file) throws IOException {
 		// TODO Auto-generated method stub
