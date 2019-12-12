@@ -57,6 +57,8 @@ private Operation P;
 	 switch (s) {
 	 case "plus":
 		 return Operation.Plus;
+	 case "mul":
+		 return Operation.Times;
 	case "times":
 		 return Operation.Times;
 	case "div":
