@@ -1,4 +1,4 @@
-package Ex2Testing;
+package Ex1Testing;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class polynomtest {
+public class FunctionsGUI_Test {
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,62 +17,92 @@ public class polynomtest {
 	}
 
 	@Test
-	public void testPolynom() {
+	public void testAdd() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testPolynomString() {
+	public void testAddAll() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testF() {
+	public void testClear() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testAddPolynom_able() {
+	public void testContains() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testAddMonom() {
+	public void testContainsAll() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testSubstract() {
+	public void testIsEmpty() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testMultiplyPolynom_able() {
+	public void testIterator() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testEqualsObject() {
+	public void testRemove() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testIsZero() {
+	public void testRemoveAll() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testRoot() {
+	public void testRetainAll() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testCopy() {
+	public void testSize() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testDerivative() {
+	public void testToArray() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testToArrayTArray() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testInitFromFile() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testSaveToFile() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testDrawFunctionsIntIntRangeRangeInt() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testDrawFunctionsString() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testGet() {
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -82,27 +112,7 @@ public class polynomtest {
 	}
 
 	@Test
-	public void testArea() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testIteretor() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMultiplyMonom() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
 	public void testMain() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testInitFromString() {
 		fail("Not yet implemented"); // TODO
 	}
 

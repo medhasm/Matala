@@ -1,4 +1,4 @@
-package Ex2Testing;
+package Ex1Testing;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class FunctionsGUI_Test {
+public class ComplexFunctiontest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,97 +17,97 @@ public class FunctionsGUI_Test {
 	}
 
 	@Test
-	public void testAdd() {
+	public void testComplexFunction() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testAddAll() {
+	public void testComplexFunctionFunction() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testClear() {
+	public void testComplexFunctionOperationFunctionFunction() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testContains() {
+	public void testComplexFunctionStringFunctionFunction() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testContainsAll() {
+	public void testF() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testIsEmpty() {
+	public void testComplexFunctionString() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testIterator() {
+	public void testInitFromString() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testRemove() {
+	public void testCopy() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testRemoveAll() {
+	public void testPlus() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testRetainAll() {
+	public void testMul() {
+		
+	}
+
+	@Test
+	public void testDiv() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testSize() {
+	public void testMax() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testToArray() {
+	public void testMin() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testToArrayTArray() {
+	public void testComp() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testInitFromFile() {
+	public void testLeft() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testSaveToFile() {
+	public void testRight() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testDrawFunctionsIntIntRangeRangeInt() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testDrawFunctionsString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testGet() {
+	public void testGetOp() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
 	public void testToString() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testEqualsObject() {
 		fail("Not yet implemented"); // TODO
 	}
 
