@@ -3,5 +3,9 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+<<<<<<< HEAD
+	<classpathentry kind="lib" path="C:/Users/Aseel Nemer/Desktop/json-simple-1.1.1.jar.jar"/>
+=======
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386
 	<classpathentry kind="output" path="bin"/>
 </classpath>

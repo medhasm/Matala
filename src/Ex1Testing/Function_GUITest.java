@@ -1,4 +1,10 @@
 package Ex1Testing;
+<<<<<<< HEAD:src/Ex1Testing/Function_GUITest.java
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+=======
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import java.io.IOException;
@@ -7,6 +13,7 @@ import java.util.function.Function;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386:src/Ex1Testing/Functions_GUITest.java
 import Ex1.ComplexFunction;
 import Ex1.Functions_GUI;
 import Ex1.Monom;
@@ -30,7 +37,11 @@ import Ex1.functions;
  */
 class Functions_GUITest {
 	public static void main(String[] a) {
+<<<<<<< HEAD:src/Ex1Testing/Function_GUITest.java
+	Functions_GUI data = FunctionsFactory();
+=======
 		functions data = FunctionsFactory();
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386:src/Ex1Testing/Functions_GUITest.java
 		int w=1000, h=600, res=200;
 		Range rx = new Range(-10,10);
 		Range ry = new Range(-5,15);
@@ -58,11 +69,19 @@ static void setUpBeforeClass() throws Exception {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		_data = FunctionsFactory();
+	//	_data = FunctionsFactory();
 	}
 
-	@Test
+	//@Test
 	void testFunctions_GUI() {
+<<<<<<< HEAD:src/Ex1Testing/Function_GUITest.java
+		//fail("Not yet implemented");
+	}
+
+	//@Test
+	void testInitFromFile() {
+	//	fail("Not yet implemented");
+=======
 		Functions_GUI ans =new Functions_GUI();
 		ans.add(new Polynom("3x^5+7"));
 		ans.add(new ComplexFunction("Plus",new Polynom ("4x^5+3"),new Monom("24x")));
@@ -88,10 +107,14 @@ static void setUpBeforeClass() throws Exception {
 		assertEquals(ans.toString(),_data.toString());
 		
 		
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386:src/Ex1Testing/Functions_GUITest.java
 	}
 
-	@Test
+	//@Test
 	void testSaveToFile() {
+<<<<<<< HEAD:src/Ex1Testing/Function_GUITest.java
+	//	fail("Not yet implemented");
+=======
 		Functions_GUI ans = new Functions_GUI();
 		
 		ans.add(new Polynom("-4x^5+ 5x^6+5"));
@@ -107,16 +130,29 @@ static void setUpBeforeClass() throws Exception {
 		
 		
 		assertEquals(_data.toString(), ans.toString());
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386:src/Ex1Testing/Functions_GUITest.java
 	}
-/*
-	@Test
+
+	//@Test
 	void testDrawFunctions() {
+<<<<<<< HEAD:src/Ex1Testing/Function_GUITest.java
+		//_data.drawFunctions();
+	//	fail("Not yet implemented");
+=======
 		_data.drawFunctions();
 		
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386:src/Ex1Testing/Functions_GUITest.java
 	}
 */
 	@Test
 	void testDrawFunctionsIntIntRangeRangeInt() {
+<<<<<<< HEAD:src/Ex1Testing/Function_GUITest.java
+		//_data.drawFunctions();
+		//fail("Not yet implemented");
+	}
+	public static Functions_GUI FunctionsFactory() {
+		Functions_GUI ans = new Functions_GUI();
+=======
 		
 		int w=1000, h=600, res=200;
 		Range rx = new Range(-10,10);
@@ -128,6 +164,7 @@ static void setUpBeforeClass() throws Exception {
 	
 	public static functions FunctionsFactory() {
 		functions ans = new Functions_GUI();
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386:src/Ex1Testing/Functions_GUITest.java
 		String s1 = "3.1 +2.4x^2 -x^4";
 		String s2 = "5 +2x -3.3x +0.1x^5";
 		String[] s3 = {"x +3","x -2", "x -4"};

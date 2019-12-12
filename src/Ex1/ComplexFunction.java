@@ -19,7 +19,6 @@ private Operation P;
 	 this.P=Operation.None;
  }
  public ComplexFunction(Operation OP,function f1,function f2) {
-	//String s=fix_op(OP.toString());
 	switch (OP) {
 	case Plus:
 		P=P.Plus;
@@ -48,56 +47,54 @@ private Operation P;
 	this.left=f1;
 	this.right=f2;
  }
- private String fix_op(String s)
+ private Operation fix_op(String s)
  {
-	 if (s.equals("plus"))
-		 return "Plus";
-	 if(s.equals("times"))
-		 return "Times";
-	 if(s.equals("divid"))
-		 return "Divid";
-	 if(s.equals("none"))
-	 	return "None";
-	 if(s.equals("min"))
-		 return "Min";
-	 if(s.equals("max"))
-		 return "Max";
-	 if (s.equals("comp")) 
-		 return "Comp";
-	 if(s.equals("error"))
-		 return "Error";
-	 return this.P.toString();
-	
+	 switch (s) {
+	 case "plus":
+		 return Operation.Plus;
+	case "times":
+		 return Operation.Times;
+	case "div":
+		return Operation.Divid;
+	case "divid":
+		 return Operation.Divid;
+	case "none":
+	 	return Operation.None;
+	case "min":
+		 return Operation.Min;
+	case "max":
+		 return Operation.Max;
+	case "comp": 
+		 return Operation.Comp;
+	case "error":
+		 return Operation.Error; 
+	case "Plus":
+			return Operation.Plus;
+	case "Times":
+			return Operation.Times;
+	case "Divid":
+			return Operation.Divid;
+	case "Max":
+			return Operation.Max;
+	case "Min":
+			return Operation.Min;
+	case "Comp":
+			return Operation.Comp;
+	case "None":
+			return Operation.None;
+	default:
+		throw new RuntimeException("ERR:  you entered iligal Operatin. got");
+	 }
+
  }
  public ComplexFunction(String s,function f1,function f2)
  {
-	 //	String a=fix_op(s);
-		switch (s) {
-		case "Plus":
-			P=Operation.Plus;
-			break;
-		case "Times":
-			P=Operation.Times;
-			break;
-		case "Divid":
-			P=Operation.Divid;
-			break;
-		case "Max":
-			P=Operation.Max;
-			break;
-		case "Min":
-			P=Operation.Min;
-			break;
-		case "Comp":
-			P=Operation.Comp;
-			break;
-		case "None":
+	 Operation op=fix_op(s);
+		if(op==Operation.None)
 			throw new RuntimeException( "ERR: operation can't be None");
-		default:
-			throw new RuntimeException("ERR:  you entered iligal Operatin got");	
-		}
 		left=f1;
 		right=f2;
+		P=op;
 	 }
 	@Override
 	public double f(double x) {
@@ -126,7 +123,7 @@ private Operation P;
 		case None:
 			if(right==null) return left.f(x);
 		case Error:
-			throw new RuntimeException("ERR:  you entered iligal Operatin got");
+			throw new RuntimeException("ERR:  YOUR OPERATION IS ERROR");
 		default:
 			throw new RuntimeException("ERR:  you entered iligal Operatin got");
 		}	
@@ -141,8 +138,12 @@ private Operation P;
 	}
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
+		s=s.replaceAll(" ","");
+=======
 		
 		s=s.replace(" ","");
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386
 		int git;
 		ComplexFunction cf=new ComplexFunction();
 		function f1,f2;
@@ -180,7 +181,7 @@ private Operation P;
 		if(this.left.toString().equals("+0.0x^0")) {
 			this.left=f1;
 		this.P=Operation.Plus;
-	}
+		}
 		else
 			if(this.right.toString().equals("+0.0x^0")){
 				this.right=f1;
@@ -216,24 +217,32 @@ private Operation P;
 		if(this.P==Operation.None) {
 			
 		
-		if(this.left.toString().equals("+0.0x^0")) {
+		if(this.left.toString().equals("+0.0x^0"))
+		{
 			this.left=f1;
 		this.P=Operation.Times;
-	}
+		}
 		else
-			if(this.right.toString().equals("+0.0x^0")){
+			if(right==null)
+			{
+				right=f1;
+				P=Operation.Times;
+			}
+			if(this.right.toString().equals("+0.0x^0")) 
+			{
+
 				this.right=f1;
 				this.P=Operation.Times;
+			}
 		}
-		}else {
+		else 
+		{
 			ComplexFunction cf=new ComplexFunction(this.P,this.left,this.right);
 			this.left=cf;
 			this.right=f1;
 			this.P=Operation.Times;
-			}
-	
+		}
 	}
-	
 	@Override
 	public void div(function f1) {
 		// TODO Auto-generated method stub
@@ -241,7 +250,7 @@ private Operation P;
 			throw new RuntimeException("ERR: YOU CAN'T DIVID BY ZERO!!");
 		if(this.P==Operation.None) {
 		
-			if(right.toString().equals("+0.0x^0")){
+			if(right==new Polynom("0")){
 				right=f1;
 				this.P=Operation.Divid;
 		}
@@ -260,40 +269,53 @@ private Operation P;
 		if (f1==null) {
 			return ;
 		}
+<<<<<<< HEAD
+		if(this.P==Operation.None) 
+		{
+				if(this.right.toString().equals("+0.0x^0"))
+				{
+=======
 		if(this.P==Operation.None) {
 		
 			
 				if(this.right.equals(new Polynom("0"))){
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386
 					this.right=f1;
 					this.P=Operation.Max;
-			}
+					}
 		}
-				else {
-				ComplexFunction cf=new ComplexFunction(this.P,left, right);
-				left=cf;
-				right=f1;
-				P=Operation.Max;
+				else 
+				{
+					ComplexFunction cf=new ComplexFunction(this.P,left, right);
+					left=cf;
+					right=f1;
+					P=Operation.Max;
 				}	
 				
 		}
-		
-
-	
 	@Override
 	public void min(function f1) {
 		// TODO Auto-generated method stub
-		if (f1==null) {
+		if (f1==null) 
+		{
 			return ;
 		}
-		if(this.P==Operation.None) {
+		if(this.P==Operation.None) 
+		{
 			
 			
+<<<<<<< HEAD
+			if(this.right.toString().equals("+0.0x^0"))
+			{
+=======
 			if(this.right.equals(new Polynom("0"))){
+>>>>>>> 6e97fa72fc5f40f55cc0e03299e51cf7faa5b386
 				this.right=f1;
 				this.P=Operation.Min;
 		}
 	}
-			else {
+			else 
+			{
 			ComplexFunction cf=new ComplexFunction(this.P,left, right);
 			left=cf;
 			right=f1;
@@ -376,8 +398,7 @@ private Operation P;
 			for(int i=0;i<20;i++)
 			{
 				if(Math.abs(((ComplexFunction) obj).f(i)-this.f(i))>0.000001)
-					return false;
-					
+					return false;		
 			}
 		}
 		if( obj instanceof function)
@@ -387,8 +408,6 @@ private Operation P;
 					return false;
 		}
 		return true;
-		
-		
 	}
 	/**@Override
 	public String toString() {
@@ -401,4 +420,8 @@ private Operation P;
 		// TODO Auto-generated method stub
 		return (this.P.toString()+"("+this.left.toString()+"," +this.right.toString()+")");
 	}*/
+	public static void main(String[] args) {
+		
+						
+	}
 }
