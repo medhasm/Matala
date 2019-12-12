@@ -1,7 +1,12 @@
-package Ex1;
+package Ex2;
 
+import Ex2.ComplexFunction;
+import Ex2.Operation;
+import Ex2.Polynom;
+import Ex2.complex_function;
+import Ex2.function;
 
-public class ComplexFunction implements complex_function {
+public  class ComplexFunction implements complex_function {
 private function left;
 private function right;
 private Operation P;

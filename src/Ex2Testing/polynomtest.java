@@ -1,4 +1,4 @@
-package Ex1Testing;
+package Ex2Testing;
 
 import static org.junit.Assert.*;
 
@@ -6,10 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import Ex1.ComplexFunction;
-
-public class ComplexFunctiontest {
-		
+public class polynomtest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -20,25 +17,12 @@ public class ComplexFunctiontest {
 	}
 
 	@Test
-	public void testComplexFunction() 
-	{
-							
-		
+	public void testPolynom() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testComplexFunctionFunction() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testComplexFunctionOperationFunctionFunction() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testComplexFunctionStringFunctionFunction() {
+	public void testPolynomString() {
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -48,67 +32,22 @@ public class ComplexFunctiontest {
 	}
 
 	@Test
-	public void testComplexFunctionString() {
+	public void testAddPolynom_able() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testInitFromString() {
+	public void testAddMonom() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testCopy() {
+	public void testSubstract() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testPlus() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMul() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testDiv() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMax() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMin() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testComp() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testLeft() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testRight() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testGetOp() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testToString() {
+	public void testMultiplyPolynom_able() {
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -118,10 +57,53 @@ public class ComplexFunctiontest {
 	}
 
 	@Test
+	public void testIsZero() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testRoot() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testCopy() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testDerivative() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testToString() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testArea() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testIteretor() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testMultiplyMonom() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
 	public void testMain() {
 		fail("Not yet implemented"); // TODO
 	}
-	public static void main(String[] args) {
-		
+
+	@Test
+	public void testInitFromString() {
+		fail("Not yet implemented"); // TODO
 	}
+
 }

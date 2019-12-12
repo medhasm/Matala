@@ -1,4 +1,5 @@
-package Ex1;
+package Ex2;
+
 import java.util.AbstractList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -6,8 +7,11 @@ import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Predicate;
+import Ex2.Polynom_able;
+import Ex2.Monom;
+import Ex2.Monom_Comperator;
 
-import Ex1Testing.polynomtest;
+//import Ex1Testing.polynomtest;
 
 import  java.util.Map;
 /**
@@ -19,7 +23,7 @@ import  java.util.Map;
  * @author Boaz
  *
  */
-public class Polynom implements Polynom_able{
+public  class Polynom implements Polynom_able{
 	 public ArrayList<Monom> poly1 = new ArrayList<Monom>();
 	 public LinkedList<Monom> poly2 = new LinkedList<Monom>();
 	
@@ -371,11 +375,11 @@ this.poly2.add(new Monom("0"));
 		
 		
 	}
-	@Override
+	/**@Override
 	public function initFromString(String s) {
 		// TODO Auto-generated method stub
 		return new Polynom(s);
-	}
+	}*/
 	public static void main(String[] args) {
 		Polynom p1=new Polynom("2x+3");
 		Polynom p2=(Polynom) p1.copy();
@@ -394,6 +398,11 @@ this.poly2.add(new Monom("0"));
 		}
 		if (this.poly2.size()==0)
 			this.poly2.add(zero);
+	}
+	@Override
+	public function initFromString(String s) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

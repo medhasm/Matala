@@ -1,4 +1,4 @@
-package Ex1;
+package Ex2;
 
 //package stdDraw;
 // https://introcs.cs.princeton.edu/java/stdlib/StdDraw.java.html
