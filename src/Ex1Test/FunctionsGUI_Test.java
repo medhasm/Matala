@@ -1,4 +1,4 @@
-package Ex1Testing;
+package Ex1Test;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Monomtest {
+public class FunctionsGUI_Test {
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,92 +17,97 @@ public class Monomtest {
 	}
 
 	@Test
-	public void testGetComp() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMonomDoubleInt() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMonom() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMonomMonom() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testGet_coefficient() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testGet_power() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testDerivative() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testF() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testIsZero() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMonomString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
 	public void testAdd() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testMultipy() {
+	public void testAddAll() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testClear() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testContains() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testContainsAll() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testIsEmpty() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testIterator() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testRemove() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testRemoveAll() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testRetainAll() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testSize() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testToArray() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testToArrayTArray() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testInitFromFile() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testSaveToFile() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testDrawFunctionsIntIntRangeRangeInt() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testDrawFunctionsString() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testGet() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testSet_coefficient1() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testSet_power1() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testInitFromString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testCopy() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testEqualsObject() {
 		fail("Not yet implemented"); // TODO
 	}
 

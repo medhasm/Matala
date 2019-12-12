@@ -1,4 +1,4 @@
-package Ex1Testing;
+package Ex1Test;
 
 import static org.junit.Assert.*;
 

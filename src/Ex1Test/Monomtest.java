@@ -1,4 +1,4 @@
-package Ex1Testing;
+package Ex1Test;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ComplexFunctiontest {
+public class Monomtest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,22 +17,37 @@ public class ComplexFunctiontest {
 	}
 
 	@Test
-	public void testComplexFunction() {
+	public void testGetComp() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testComplexFunctionFunction() {
+	public void testMonomDoubleInt() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testComplexFunctionOperationFunctionFunction() {
+	public void testMonom() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public void testComplexFunctionStringFunctionFunction() {
+	public void testMonomMonom() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testGet_coefficient() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testGet_power() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testDerivative() {
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -42,7 +57,37 @@ public class ComplexFunctiontest {
 	}
 
 	@Test
-	public void testComplexFunctionString() {
+	public void testIsZero() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testMonomString() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testAdd() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testMultipy() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testToString() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testSet_coefficient1() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testSet_power1() {
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -53,56 +98,6 @@ public class ComplexFunctiontest {
 
 	@Test
 	public void testCopy() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testPlus() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMul() {
-		
-	}
-
-	@Test
-	public void testDiv() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMax() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testMin() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testComp() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testLeft() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testRight() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testGetOp() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testToString() {
 		fail("Not yet implemented"); // TODO
 	}
 
