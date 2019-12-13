@@ -1,5 +1,6 @@
 
 package Ex2;
+
 import Ex2.Monom;
 import Ex2.Polynom;
 import Ex2.Polynom_able;

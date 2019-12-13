@@ -6,17 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import Ex1Testing.ComplexFunction;
-import Ex1Testing.Exception;
-import Ex1Testing.Functions_GUI;
-import Ex1Testing.IOException;
-import Ex1Testing.Iterator;
-import Ex1Testing.Monom;
-import Ex1Testing.Polynom;
-import Ex1Testing.Range;
-import Ex1Testing.String;
-import Ex1Testing.function;
-import Ex1Testing.functions;
+
 
 public class FunctionsGUI_Test {
 

@@ -73,7 +73,7 @@ public class Functions_GUI implements functions {
 		// TODO Auto-generated method stub
 		func.clear();
 	}
-
+r
 	@Override
 	public boolean contains(Object arg0) {
 		// TODO Auto-generated method stub
