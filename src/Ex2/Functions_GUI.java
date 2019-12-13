@@ -242,7 +242,7 @@ public class Functions_GUI implements functions {
 	public void drawFunctions(String json_file)
 	{
 		// TODO Auto-generated method stub	
-		/*
+		
        try 
         {
         	 FileReader file_read=new FileReader(json_file);
@@ -282,53 +282,9 @@ public class Functions_GUI implements functions {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		*/
 		
-		JSONParser jsonParser = new JSONParser();
+		
 
-		try {
-
-			FileReader fileReader = new FileReader(json_file);
-			JSONObject jsonObject = (JSONObject) jsonParser.parse(fileReader);
-			Long width2 = (Long) jsonObject.get("Width");
-			int width = width2.intValue();
-			Long height2 = (Long) jsonObject.get("Height");
-			int height = height2.intValue();
-			Long resolution2 = (Long) jsonObject.get("Resolution");
-			int resolution = resolution2.intValue();
-			JSONArray rx = (JSONArray) jsonObject.get("Range_X");
-			JSONArray ry = (JSONArray) jsonObject.get("Range_Y");
-			Range rxnew;
-			Range rynew;
-			double rx0;
-			double rx1;
-			double ry0;
-			double ry1;
-			Long rx00 = (Long) rx.get(0);
-			Long rx11 = (Long) rx.get(1);
-			Long ry00 = (Long) ry.get(0);
-			Long ry11 = (Long) ry.get(1);
-			rx0 = rx00.doubleValue();
-			rx1 = rx11.doubleValue();
-			ry0 = ry00.doubleValue();
-			ry1 = ry11.doubleValue();
-			if(rx0<rx1)
-				rxnew = new Range(rx0,rx1);
-			else
-				rxnew = new Range(rx1,rx0);
-			if(ry0<ry1)
-				rynew = new Range(ry0,ry1);
-			else
-				rynew = new Range(ry1,ry0);
-			this.drawFunctions(width, height, rxnew, rynew, resolution);
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		
 	}
 	
@@ -347,28 +303,7 @@ public class Functions_GUI implements functions {
 	}
 	public static Color[] Colors = {Color.blue, Color.cyan,
 			Color.MAGENTA, Color.ORANGE, Color.red, Color.GREEN, Color.PINK};
-	public static void main(String[] args)
-	{
-	    ComplexFunction cf1 = new ComplexFunction("Plus(-1.0x^4+2.4x^2+3.1,+0.1x^5-1.2999999999999998x+5.0)");
-        ComplexFunction cf2 = new ComplexFunction("Plus(Divid(+1.0x +1.0,Times(Times(+1.0x +3.0,+1.0x -2.0),+1.0x -4.0)),2.0)");
-        ComplexFunction cf3 = new ComplexFunction("Divid(Plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),-1.0x^4 +2.4x^2 +3.1)");
-        ComplexFunction cf4 = new ComplexFunction("-1.0x^4 +2.4x^2 +3.1");
-        ComplexFunction cf5 = new ComplexFunction("Max(Max(Max(Max(Plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),Plus(Divid(+1.0x +1.0,Times(Times(+1.0x +3.0,+1.0x -2.0),+1.0x -4.0)),2.0)),div(plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),-1.0x^4 +2.4x^2 +3.1)),-1.0x^4 +2.4x^2 +3.1),+0.1x^5 -1.2999999999999998x +5.0)");
-        ComplexFunction cf6 = new ComplexFunction("Min(Min(Min(Min(Plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),Plus(Divid(+1.0x +1.0,Times(Times(+1.0x +3.0,+1.0x -2.0),+1.0x -4.0)),2.0)),div(plus(-1.0x^4 +2.4x^2 +3.1,+0.1x^5 -1.2999999999999998x +5.0),-1.0x^4 +2.4x^2 +3.1)),-1.0x^4 +2.4x^2 +3.1),+0.1x^5 -1.2999999999999998x +5.0)");
-        ComplexFunction cf7 = new ComplexFunction("0.1x^5 -1.2999999999999998x +5.0");
-        Functions_GUI a=new Functions_GUI();
-        a.add(cf1);
-        a.add(cf2);
-        a.add(cf3);
-        a.add(cf4);
-        a.add(cf5);
-        a.add(cf6);
-        a.add(cf7);
-        for (int i = 0; i < a.size(); i++)
-        {
-            System.out.println(a);
-        }
-	}
+
 }
 
 
