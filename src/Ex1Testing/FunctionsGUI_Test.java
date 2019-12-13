@@ -22,9 +22,7 @@ public class FunctionsGUI_Test {
 	public void setUp() throws Exception {
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
+
 
 	
 
