@@ -8,15 +8,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-<<<<<<< HEAD:src/Ex1/Polynom.java
+
 //import Ex1Testing.polynom;
-=======
+
 import Ex2.Monom;
 import Ex2.Monom_Comperator;
 import Ex2.Polynom_able;
 
 //import Ex1Testing.polynomtest;
->>>>>>> c4a96887ae73f82d3755a5f21ebf3b6461d5661f:src/Ex2/Polynom.java
 
 import  java.util.Map;
 /**

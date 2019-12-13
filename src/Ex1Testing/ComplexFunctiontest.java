@@ -45,10 +45,6 @@ public class ComplexFunctiontest {
 			fail("Equals method returns false for functions that are equals");
 	}
 
-	@Test
-	public void testComplexFunctionOperationFunctionFunction() {
-		
-	}
 
 	@Test
 	public void testComplexFunctionStringFunctionFunction() {
@@ -57,11 +53,14 @@ public class ComplexFunctiontest {
 
 	@Test
 	public void testF() {
+		ComplexFunction f1=new ComplexFunction();
+		
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
 	public void testComplexFunctionString() {
+				
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -81,7 +80,7 @@ public class ComplexFunctiontest {
 		ComplexFunction cf1=new ComplexFunction("plus(2x,2x)");
 		ComplexFunction cf2=new ComplexFunction("mul(4x,1)");
 		cf1.plus(cf2);
-		cf1.p
+		//cf1.p
 		
 	}
 
@@ -102,7 +101,16 @@ public class ComplexFunctiontest {
 
 	@Test
 	public void testDiv() {
-		fail("Not yet implemented"); // TODO
+		String s1 = "3.1 +2.4x^2 -x^4";
+		String s2 = "5 +2x -3.3x +0.1x^5";
+		function f=new Polynom(s1);
+		function f1=new Polynom(s2);
+		ComplexFunction cf = new ComplexFunction("plus",f,f1);
+		ComplexFunction cf2 ;
+		cf.copy();
+		cf.div(new Polynom("x^2"));
+		ComplexFunction cf3=new ComplexFunction(Operation.Divid,(new Polynom("x^2")), cf);
+		ComplexFunction cf4=new ComplexFunction(Operation.Divid,(new Polynom("x^2")), cf);
 	}
 
 	@Test

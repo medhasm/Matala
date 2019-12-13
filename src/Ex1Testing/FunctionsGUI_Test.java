@@ -14,6 +14,7 @@ import Ex2.Functions_GUI;
 import Ex2.Monom;
 import Ex2.Polynom;
 import Ex2.Range;
+import Ex2.function;
 
 public class FunctionsGUI_Test {
 
@@ -46,7 +47,6 @@ public class FunctionsGUI_Test {
 		assertEquals(ans.toString(),_data.toString());
 
 	}
-	
 
 	@Test
 	public void testSaveToFile() {
@@ -83,7 +83,8 @@ public class FunctionsGUI_Test {
 	@Test
 	public void testDrawFunctionsString() {
 		Functions_GUI ans = new Functions_GUI();
-		ans.add(new Polynom("4x^2+3"));
+		function f=new Polynom("4x^2+3");
+		ans.add(f);
 		ans.drawFunctions("GUI_params.txt");
 	}
 

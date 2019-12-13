@@ -22,6 +22,34 @@ import java.io.InputStream;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import java.io.PrintWriter;
+import java.util.LinkedList;
+import org.json.simple.*;
+
+import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.*;
+import org.json.simple.ItemList;
+import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Random;
+
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
 
 public class Functions_GUI implements functions {
 	
@@ -181,6 +209,13 @@ public class Functions_GUI implements functions {
 			}
 		}
 	}
+	private class GUI_params {
+		int Width;
+		int Height;
+		int Resolution;
+		int[] Range_X;
+		int[] Range_Y;
+	}
 	private void setGrid(Range rx, Range ry) {
 		for(double i = ry.get_max(); i>=ry.get_min(); i--) {
 			StdDraw.setPenColor(Color.gray);
@@ -213,12 +248,12 @@ public class Functions_GUI implements functions {
 	{
 		// TODO Auto-generated method stub	
 		
-        try file_reader
+       /** try 
         {
         	 FileReader file_read=new FileReader(json_file);
-        	JSONObject o = (JSONObject) new JSONParser().parse(file_reader);
+        	JSONObject o = (JSONObject) new JSONParser().parse(file_read);
                   JSONArray X, Y;
-                  X= (JSONArray) JSONObject.get("Range_X");
+                  X= (JSONArray) JSONObject.("Range_X");
                   Y= (JSONArray) JSONObject.get("Range_Y");
             long Width = (long) jSONObject.get("Width");
             int wid=(int) Width;
@@ -240,14 +275,58 @@ public class Functions_GUI implements functions {
             Range _y=new Range(dyy[0],dyy[1];
             
             this.drawFunctions(wid, hei, _x, _y,res);
-        }
-        catch (Exception e) 
-        {
-            e.printStackTrace();
-        } }catch(IOException e) {
+        
+        
+        }catch(IOException e) {
+			e.printStackTrace();
+        }*/
+		JSONParser jsonParser = new JSONParser();
+
+		try {
+
+			FileReader fileReader = new FileReader(json_file);
+			JSONObject jsonObject = (JSONObject) jsonParser.parse(fileReader);
+			Long width2 = (Long) jsonObject.get("Width");
+			int width = width2.intValue();
+			Long height2 = (Long) jsonObject.get("Height");
+			int height = height2.intValue();
+			Long resolution2 = (Long) jsonObject.get("Resolution");
+			int resolution = resolution2.intValue();
+			JSONArray rx = (JSONArray) jsonObject.get("Range_X");
+			JSONArray ry = (JSONArray) jsonObject.get("Range_Y");
+			Range rxnew;
+			Range rynew;
+			double rx0;
+			double rx1;
+			double ry0;
+			double ry1;
+			Long rx00 = (Long) rx.get(0);
+			Long rx11 = (Long) rx.get(1);
+			Long ry00 = (Long) ry.get(0);
+			Long ry11 = (Long) ry.get(1);
+			rx0 = rx00.doubleValue();
+			rx1 = rx11.doubleValue();
+			ry0 = ry00.doubleValue();
+			ry1 = ry11.doubleValue();
+			if(rx0<rx1)
+				rxnew = new Range(rx0,rx1);
+			else
+				rxnew = new Range(rx1,rx0);
+			if(ry0<ry1)
+				rynew = new Range(ry0,ry1);
+			else
+				rynew = new Range(ry1,ry0);
+			this.drawFunctions(width, height, rxnew, rynew, resolution);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
 	public function get(int i)
 	{
 		// TODO Auto-generated method stub

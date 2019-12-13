@@ -2,6 +2,7 @@
 package Ex1Testing;
 
 import static org.junit.Assert.assertEquals;
+
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,7 +13,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import Ex1.Monom;
+import Ex2.Monom;
 
 class MonomJunitTest {
 	Monom m ,d ,e;
@@ -111,12 +112,14 @@ class MonomJunitTest {
      }
      @Test
      void setcofftest() {
+    	 m=new Monom("0");
     	 System.out.println("test setcoefficient:");
     	 m.set_coefficient1(3);
     	 assertEquals((double)3,m.get_coefficient(),"set coefficient failed");
      }
      @Test
      void setpowertest() {
+    	 m=new Monom("0");
     	 System.out.println("test setpower n:");
     	 m.set_power1(3);
     	 assertEquals(3,m.get_power(),"set coefficient failed");
@@ -124,6 +127,7 @@ class MonomJunitTest {
      @Test
      void initFromStringtest() {
     	 System.out.println("test initFromString:");
+    	 m=new Monom("0");
     	 m= (Monom) m.initFromString("3x^2");
     	 d=new Monom(3,2);
     	 assertNotSame(d.toString(),m.toString(),"initfromstring failed");

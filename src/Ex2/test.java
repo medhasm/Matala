@@ -3,6 +3,9 @@ package Ex2;
 import Ex2.Monom;
 import Ex2.Polynom;
 import Ex2.Polynom_able;
+
+import java.io.IOException;
+
 import Ex2.ComplexFunction;
 
 /**import org.junit.jupiter.api.BeforeEach;
@@ -27,8 +30,8 @@ import Ex2.function;
  * @author boaz_benmoshe
  *
  */
-class Functions_GUITest {
-	public static void main(String[] a) {
+class test {
+	public static void main(String[] a) throws IOException {
 		Functions_GUI data = FunctionsFactory();
 		int w=1000, h=600, res=200;
 		Range rx = new Range(-10,10);

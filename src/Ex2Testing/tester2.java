@@ -7,14 +7,14 @@ import java.util.Iterator;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-import Ex1.ComplexFunction;
-import Ex1.Functions_GUI;
-import Ex1.Monom;
-import Ex1.Operation;
-import Ex1.Polynom;
-import Ex1.Range;
-import Ex1.function;
-import Ex1.functions;
+import Ex2.ComplexFunction;
+import Ex2.Functions_GUI;
+import Ex2.Monom;
+import Ex2.Operation;
+import Ex2.Polynom;
+import Ex2.Range;
+import Ex2.function;
+import Ex2.functions;
 
 import java.util.Iterator;
 
