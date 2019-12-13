@@ -2,9 +2,22 @@ package Ex2Testing;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+import java.util.Iterator;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+
+import Ex2.ComplexFunction;
+import Ex2.Functions_GUI;
+import Ex2.Monom;
+import Ex2.Operation;
+import Ex2.Polynom;
+import Ex2.Range;
+import Ex2.function;
+import Ex2.functions;
 
 
 
@@ -32,6 +45,15 @@ public class FunctionsGUI_Test {
 		String JSON_param_file = "GUI_params.txt";
 		data.drawFunctions(JSON_param_file);
 	}
+	private functions _data=null;
+
+
+/*
+	@BeforeEach
+	void setUp() throws Exception {
+	_data = FunctionsFactory();
+	}
+	*/
 	@Test
 	public void testInitFromFile() {
 		functions ans =new Functions_GUI();
@@ -60,8 +82,8 @@ public class FunctionsGUI_Test {
 		ans.add(new ComplexFunction("Divid(Times(x^2,x),4)"));
 		ans.add(new Monom("3x^7"));
 		try {
-			ans.saveToFile("function.txt");
-			_data.initFromFile("function.txt");
+			ans.saveToFile("function1.txt");
+			_data.initFromFile("function.txt2");
 		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -72,7 +94,7 @@ public class FunctionsGUI_Test {
 		assertEquals(_data.toString(), ans.toString());
 
 	}
-	}
+	
 
 	@Test
 	public void testDrawFunctionsIntIntRangeRangeInt() {

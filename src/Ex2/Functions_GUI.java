@@ -45,11 +45,6 @@ import java.util.Iterator;
 import java.util.Random;
 
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.JsonSyntaxException;
 
 public class Functions_GUI implements functions {
 	
@@ -73,7 +68,7 @@ public class Functions_GUI implements functions {
 		// TODO Auto-generated method stub
 		func.clear();
 	}
-r
+
 	@Override
 	public boolean contains(Object arg0) {
 		// TODO Auto-generated method stub
@@ -247,39 +242,48 @@ r
 	public void drawFunctions(String json_file)
 	{
 		// TODO Auto-generated method stub	
-		
-       /** try 
+		/*
+       try 
         {
         	 FileReader file_read=new FileReader(json_file);
         	JSONObject o = (JSONObject) new JSONParser().parse(file_read);
                   JSONArray X, Y;
-                  X= (JSONArray) JSONObject.("Range_X");
-                  Y= (JSONArray) JSONObject.get("Range_Y");
-            long Width = (long) jSONObject.get("Width");
+                  X= (JSONArray) o.get("Range_X");
+                  Y= (JSONArray) o.get("Range_Y");
+            long Width = (long) o.get("Width");
             int wid=(int) Width;
-            long Height = (long) jSONObject.get("Height");
+            long Height = (long) o.get("Height");
             int hei= (int) Height;
-            long Resolution=(long) JSONObject.get("Resolution");
+            long Resolution=(long) o.get("Resolution");
             int res=(int) Resolution;
-            long[2] dx ,dy;
+            long dx[] =new long[2];
+            long dy[] =new long[2];
             dx[0] = (long) X.get(0);
             dx[1] = (long) X.get(1);
             dy[0] = (long) Y.get(0);
             dy[1] = (long) Y.get(1);
-            int[2] dxx,dyy;
+
+            int dxx[]=new int[2];
+            int dyy[]=new int[2];
             dxx[0]  = (int) dx[0];
             dyy[0]= (int) dy[0];
             dxx[1]  = (int) dx[1];
             dyy[1]= (int) dy[1];
             Range _x=new Range(dxx[0],dxx[1]);
-            Range _y=new Range(dyy[0],dyy[1];
+            Range _y=new Range(dyy[0],dyy[1]);
             
             this.drawFunctions(wid, hei, _x, _y,res);
         
         
-        }catch(IOException e) {
+        	} catch (FileNotFoundException e) {
 			e.printStackTrace();
-        }*/
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		*/
+		
 		JSONParser jsonParser = new JSONParser();
 
 		try {
@@ -325,6 +329,7 @@ r
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public function get(int i)
